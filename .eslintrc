@@ -1,0 +1,60 @@
+{
+    "overrides": [
+        {
+            // Define the configuration for `.astro` file.
+            "files": [
+                "*.astro"
+            ],
+            "plugins": [
+                "astro"
+            ],
+            // Allows Astro components to be parsed.
+            "parser": "astro-eslint-parser",
+            // Parse the script in `.astro` as TypeScript by adding the following configuration.
+            // It's the setting you need when using TypeScript.
+            "parserOptions": {
+                "parser": "@typescript-eslint/parser",
+                "extraFileExtensions": [
+                    ".astro"
+                ]
+            },
+            "rules": {
+                // override/add rules settings here, such as:
+                // "astro/no-set-html-directive": "error"
+            }
+        },
+        {
+            "files": [
+                ".ts",
+                ".tsx"
+            ],
+            "extends": [
+                "airbnb-base",
+                "airbnb-base-typescript",
+                "preact",
+                "prettier"
+            ],
+            "rules": {
+                "react/jsx-filename-extension": [
+                    1,
+                    {
+                        "extensions": [
+                            ".ts",
+                            ".tsx"
+                        ]
+                    }
+                ],
+                "jest/no-deprecated-functions": "off",
+                "import/no-cycle": "off",
+                "no-param-reassign": "off"
+            },
+            "env": {
+                "browser": true,
+                "jest": true
+            }
+        }
+    ],
+    "ignorePatterns": [
+        "*.d.ts"
+    ]
+}
