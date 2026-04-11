@@ -3,7 +3,6 @@ export interface Props {
   title?: string;
   description?: string;
   image?: string;
-  url?: URL | string;
 }
 
 const {
@@ -13,6 +12,37 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+
+// JSON-LD Person Schema based on April 2026 Audit
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sakar Upadhyaya Khatiwada",
+  "alternateName": "Sakar UK",
+  "url": "https://sakaru.com.np",
+  "jobTitle": "Zendesk Developer & Shopify Plus Engineer",
+  "description": description,
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "St. Xavier's College, Kathmandu"
+  },
+  "knowsAbout": ["Zendesk ZAF", "Shopify Plus", "React", "TypeScript", "Laravel", "ZIS", "Sunshine"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance Consultant"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madhyapur Thimi",
+    "addressRegion": "Bhaktapur",
+    "addressCountry": "Nepal"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/sakaruk",
+    "https://github.com/sakaruk",
+    "https://twitter.com/sakaruk"
+  ]
+};
 ---
 
 <!-- Canonical URL -->
@@ -32,19 +62,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
-<!-- JSON-LD Person Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sakar Upadhyaya Khatiwada",
-  "url": "https://sakaru.com.np",
-  "jobTitle": "Senior Software Engineer",
-  "knowsAbout": ["Zendesk Development", "Shopify Engineering", "SaaS Integration"],
-  "sameAs": [
-    "https://linkedin.com/in/sakaruk",
-    "https://github.com/sakaruk",
-    "https://twitter.com/sakaruk"
-  ]
-}
-</script>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

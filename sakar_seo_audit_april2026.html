@@ -1,0 +1,214 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.w{padding:1rem 0;font-family:var(--font-sans)}
+.section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:10px}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+@media(max-width:500px){.sg{grid-template-columns:repeat(2,1fr)}}
+.sc{background:var(--color-background-secondary);border-radius:8px;padding:12px;text-align:center}
+.sn{font-size:26px;font-weight:500}.sl{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.nr{color:#E24B4A}.na{color:#BA7517}.ng{color:#639922}
+.pc{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:12px;margin-bottom:1.25rem;overflow:hidden}
+.ph{padding:12px 18px;border-bottom:.5px solid var(--color-border-tertiary);display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pt{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.pu{font-size:11px;color:var(--color-text-tertiary);font-family:var(--font-mono);margin-top:2px}
+.badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.b-no{background:#FCEBEB;color:#A32D2D}
+.b-part{background:#FAEEDA;color:#854F0B}
+.b-yes{background:#EAF3DE;color:#3B6D11}
+.b-new{background:#E6F1FB;color:#185FA5}
+.cl{padding:14px 18px;display:grid;gap:7px}
+.ci{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--color-text-secondary);line-height:1.5}
+.ic{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500}
+.i-no{background:#FCEBEB;color:#A32D2D}
+.i-yes{background:#EAF3DE;color:#3B6D11}
+.i-part{background:#FAEEDA;color:#854F0B}
+.ci b{font-weight:500;color:var(--color-text-primary)}
+.dv{border:none;border-top:.5px solid var(--color-border-tertiary);margin:0 18px}
+.progress-bar{height:6px;border-radius:3px;background:var(--color-background-secondary);margin-top:6px;overflow:hidden}
+.progress-fill{height:100%;border-radius:3px}
+.alert{border-radius:12px;padding:14px 18px;margin-bottom:1.25rem}
+.alert-warn{background:#FAEEDA;border:.5px solid #FAC775}
+.alert-warn h3{font-size:13px;font-weight:500;color:#854F0B;margin-bottom:6px}
+.alert-warn li{font-size:13px;color:#854F0B;padding-left:14px;position:relative;line-height:1.6;list-style:none}
+.alert-warn li::before{content:"→";position:absolute;left:0}
+.alert-ok{background:#EAF3DE;border:.5px solid #C0DD97}
+.alert-ok h3{font-size:13px;font-weight:500;color:#3B6D11;margin-bottom:6px}
+.alert-ok li{font-size:13px;color:#3B6D11;padding-left:14px;position:relative;line-height:1.6;list-style:none}
+.alert-ok li::before{content:"✓";position:absolute;left:0}
+.page-score{display:flex;align-items:center;gap:10px;padding:10px 18px;background:var(--color-background-secondary);border-top:.5px solid var(--color-border-tertiary)}
+.ps-label{font-size:11px;color:var(--color-text-secondary)}
+.ps-bar{flex:1;height:5px;border-radius:3px;background:var(--color-background-primary);overflow:hidden}
+.ps-fill{height:100%;border-radius:3px}
+.ps-pct{font-size:11px;font-weight:500;min-width:28px;text-align:right}
+</style>
+
+<div class="w">
+<div class="section-label">Full SEO implementation audit — sakaru.com.np — April 2026</div>
+
+<div class="sg">
+  <div class="sc"><div class="sn ng">2</div><div class="sl">new pages live</div></div>
+  <div class="sc"><div class="sn na">~45%</div><div class="sl">recommendations done</div></div>
+  <div class="sc"><div class="sn nr">4</div><div class="sl">critical gaps remain</div></div>
+  <div class="sc"><div class="sn ng">sitemap</div><div class="sl">now exists ✓</div></div>
+</div>
+
+<div class="alert alert-ok">
+  <h3>What's been fixed since last audit</h3>
+  <ul>
+    <li>/services page created with 4 service areas and correct keyword targeting</li>
+    <li>/portfolio page created with all 4 Zendesk apps (Stylo, ClickSend, GMB, Quark AI)</li>
+    <li>sitemap-0.xml exists — Googlebot can now discover all pages</li>
+    <li>Social links (LinkedIn, GitHub, Twitter) fixed — but only on /blog/kinetic-architect, /services, /portfolio footer. Home, About, Blog index, Talks still have href="#"</li>
+    <li>Nav updated on newer pages to include Services + Portfolio links</li>
+    <li>Page title on /services and /portfolio uses keyword-first format correctly</li>
+  </ul>
+</div>
+
+<div class="alert alert-warn">
+  <h3>Critical: inconsistency across old vs new pages</h3>
+  <ul>
+    <li>Home, About, Blog, Talks have the OLD nav (no Services, no Portfolio links)</li>
+    <li>Home, About, Blog, Talks footer social links still href="#" — only newer pages have real URLs</li>
+    <li>Two different navigation structures exist simultaneously — this confuses crawlers and users</li>
+  </ul>
+</div>
+
+<!-- HOME -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Home — sakaru.com.np/</div><div class="pu">&lt;title&gt; "Sakar Upadhyaya Khatiwada | The Kinetic Architect"</div></div>
+    <span class="badge b-part">2 of 7 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Page title unchanged</b> — still "The Kinetic Architect". Must be "Zendesk Developer &amp; Shopify Engineer | Sakar Upadhyaya Khatiwada"</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>H2 "Linking SaaS Ecosystems"</b> — neither "Zendesk" nor "Shopify" appears as the primary identity in the hero. The specialization text is buried below the fold</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No meta description</b> with target keywords detected</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Nav missing Services and Portfolio links</b> — only Home, Blog, About, Talks visible. These are now live pages that have no entry point from the homepage</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Footer social links still href="#"</b> — LinkedIn, GitHub, Twitter not wired on this page</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>"View Digital Solutions Portfolio" CTA still links to "#"</b> — /portfolio is live, this should link there now</div></div>
+    <div class="ci"><div class="ic i-part">~</div><div>Body text mentions "Zendesk" and "Shopify" but they appear as subsection labels, not in crawlable keyword-density positions (H1/H2/intro paragraph)</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:28%;background:#E24B4A"></div></div><span class="ps-pct nr">28%</span></div>
+</div>
+
+<!-- ABOUT -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">About — sakaru.com.np/about</div><div class="pu">&lt;title&gt; "About | Sakar Upadhyaya Khatiwada"</div></div>
+    <span class="badge b-no">0 of 5 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Meta title unchanged</b> — "About | Sakar Upadhyaya Khatiwada" has no target keyword. Should be "About Sakar — Zendesk Expert &amp; Shopify Engineer | 10+ Years Experience"</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Fictional employer names still present</b> — "Confidential Tech Solutions", "Innovate Hub", "Digital Bridge" — real names (Proshore Nepal, Stylo) not added</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Real clients not mentioned</b> — ClickSend (Australia), ApplyBoard (Canada), Barlife (Denmark) nowhere on the page. These are strong trust signals and long-tail keyword anchors</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Nav still old version</b> — missing Services and Portfolio links</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Footer social links still href="#"</b> on this page</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:0%;background:#E24B4A"></div></div><span class="ps-pct nr">0%</span></div>
+</div>
+
+<!-- SERVICES -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Services — sakaru.com.np/services ✦ NEW</div><div class="pu">&lt;title&gt; "Professional Services | Zendesk &amp; Shopify Specialist"</div></div>
+    <span class="badge b-new">New page — 6 of 8 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-yes">✓</div><div>Page exists with 4 service sections: Zendesk Implementation, Custom Zendesk Apps, Shopify Plus Engineering, SaaS Strategy</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Title tag uses keyword-first format: "Professional Services | Zendesk &amp; Shopify Specialist"</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>ZAF, Hydrogen, Remix, AI Agents appear as crawlable text in service bullets</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Footer social links correctly wired (LinkedIn, GitHub, Twitter)</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Internal link to /portfolio present in CTA</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No meta description</b> tag — Google will auto-generate one, likely poorly. Add: "Freelance Zendesk developer and Shopify engineer based in Nepal. Custom Zendesk app development, ZAF integrations, Shopify Plus builds, and SaaS consulting."</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No schema.org markup</b> — add Service or ProfessionalService structured data for each offering</div></div>
+    <div class="ci"><div class="ic i-part">~</div><div>H1 "Specialized Services for Global SaaS Ecosystems" — serviceable but could open with "Zendesk Developer &amp; Shopify Engineer" for stronger keyword signal</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:75%;background:#639922"></div></div><span class="ps-pct ng">75%</span></div>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Portfolio — sakaru.com.np/portfolio ✦ NEW</div><div class="pu">&lt;title&gt; "Professional Portfolio | Zendesk App Developer"</div></div>
+    <span class="badge b-new">New page — 5 of 7 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-yes">✓</div><div>All 4 Zendesk apps from CV listed: Stylo Assist, ClickSend, GMB Sync, Quark AI</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Title tag "Professional Portfolio | Zendesk App Developer" — excellent keyword targeting</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Tech stack tags (TypeScript, React, ZAF, Laravel, jQuery, ZCLI) appear as crawlable text</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Internal link back to /services in CTA</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Footer social links correctly wired</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No individual project pages</b> — each app (e.g. /portfolio/stylo-zendesk-app) should have its own URL for deeper indexing and long-tail keyword capture</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No schema.org/SoftwareApplication</b> markup on any app entry</div></div>
+    <div class="ci"><div class="ic i-part">~</div><div>No Shopify project listed — even a pattern description under NDA would help cover Shopify portfolio keywords</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:71%;background:#639922"></div></div><span class="ps-pct ng">71%</span></div>
+</div>
+
+<!-- BLOG -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Blog — sakaru.com.np/blog</div><div class="pu">1 post (unchanged)</div></div>
+    <span class="badge b-no">0 of 4 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Still only 1 post</b> — none of the 8 recommended Zendesk/Shopify posts have been published. This is the biggest missed organic traffic opportunity</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Nav still old version</b> — no Services or Portfolio links</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Footer social links still href="#"</b></div></div>
+    <div class="ci"><div class="ic i-part">~</div><div>Blog index meta description mentions "Shopify and Zendesk integrations" — some keyword signal, but no posts back it up</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:10%;background:#E24B4A"></div></div><span class="ps-pct nr">10%</span></div>
+</div>
+
+<!-- BLOG POST -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Blog post — /blog/kinetic-architect</div><div class="pu">The only published post</div></div>
+    <span class="badge b-part">Mixed</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-yes">✓</div><div>Updated nav includes Services and Portfolio — this page has the new nav structure</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Footer social links correctly wired on this page</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Post content is extremely thin</b> — only 2 sentences of actual body text visible. Google penalises thin content; this post will not rank or pass quality checks</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Post targets zero Zendesk/Shopify keywords</b> — "Leadership" and "Technical Debt" are the only topics, both off-brand for the target audience</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No schema.org/Article or BlogPosting</b> markup</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:28%;background:#E24B4A"></div></div><span class="ps-pct nr">28%</span></div>
+</div>
+
+<!-- TALKS -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Talks — sakaru.com.np/talks</div><div class="pu">1 talk entry (unchanged)</div></div>
+    <span class="badge b-no">0 of 4 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Nav still old version</b> — no Services or Portfolio links</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Footer social links still href="#"</b></div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>WordCamp appearances and BarCamp 2024/2025 not added</b> — these are real, verifiable events that build authority and keyword coverage</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Video and slides links still point to generic homepages</b> (youtube.com, slideshare.com) not actual content</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:0%;background:#E24B4A"></div></div><span class="ps-pct nr">0%</span></div>
+</div>
+
+<!-- TECHNICAL -->
+<div class="pc">
+  <div class="ph">
+    <div><div class="pt">Technical SEO — site-wide</div></div>
+    <span class="badge b-part">3 of 8 done</span>
+  </div>
+  <div class="cl">
+    <div class="ci"><div class="ic i-yes">✓</div><div>sitemap-0.xml exists and is accessible — submit URL to Google Search Console immediately</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>Social links fixed on /services, /portfolio, /blog/kinetic-architect</div></div>
+    <div class="ci"><div class="ic i-yes">✓</div><div>New pages (/services, /portfolio) have keyword-targeted title tags</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No Open Graph tags</b> (og:title, og:description, og:image) on any page — social sharing will show blank previews</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No schema.org structured data</b> on any page — Person, Service, SoftwareApplication, Article all missing</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>No canonical tags</b> added to pages</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Sitemap not at /sitemap.xml</b> — only at /sitemap-0.xml. Most crawlers default-check /sitemap.xml first; add a redirect or reference in robots.txt</div></div>
+    <div class="ci"><div class="ic i-no">✕</div><div><b>Email links still Cloudflare-obfuscated</b> on all pages — Google cannot read them for entity association</div></div>
+  </div>
+  <div class="page-score"><span class="ps-label">Implementation</span><div class="ps-bar"><div class="ps-fill" style="width:37%;background:#BA7517"></div></div><span class="ps-pct na">37%</span></div>
+</div>
+
+</div>

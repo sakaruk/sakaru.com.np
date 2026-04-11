@@ -83,15 +83,28 @@ const { title, description, image } = Astro.props;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" is:inline></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" is:inline></script>
 	<style>
+		:root {
+			--primary: #0058be;
+			--secondary: #575e70;
+			--tertiary: #4648d4;
+		}
 		.kinetic-gradient {
-			background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+			background: linear-gradient(135deg, var(--primary) 0%, #2170e4 100%);
 		}
 		.timeline-line {
-			background: linear-gradient(to bottom, #0058be, transparent);
+			background: linear-gradient(to bottom, var(--primary), transparent);
 		}
         .kinetic-architect-bg {
 			background: radial-gradient(circle at 0% 0%, rgba(33, 112, 228, 0.05) 0%, transparent 50%),
 						radial-gradient(circle at 100% 100%, rgba(70, 72, 212, 0.05) 0%, transparent 50%);
+		}
+		strong, b {
+			color: var(--primary);
+			font-weight: 600;
+		}
+		/* Ensure prose strong tags also match */
+		.prose strong {
+			color: var(--primary) !important;
 		}
 	</style>
 </head>
