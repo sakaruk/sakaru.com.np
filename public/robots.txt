@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sakaru.com.np/sitemap.xml
+Sitemap: https://sakaru.com.np/sitemap-index.xml
