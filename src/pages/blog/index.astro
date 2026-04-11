@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = import.meta.glob('../../../data/blog/*.md', { eager: true });
+const sortedPosts = Object.values(posts).map((p: any) => ({
+    ...p,
+    customUrl: '/blog/' + p.file.split('/').pop().replace('.md', '')
+})).sort((a: any, b: any) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+---
+
+<BaseLayout title="Blog | Sakar Upadhyaya Khatiwada">
+    <main class="pt-32 pb-20 max-w-4xl mx-auto px-8 min-h-screen">
+        <!-- Hero/Header Section -->
+        <section class="mb-20 gsap-reveal">
+            <div class="inline-block px-3 py-1 mb-6 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-xs uppercase tracking-widest">
+                Insights & Strategy
+            </div>
+            <h1 class="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mb-6 leading-[0.9]">
+                The Engineering <br/>
+                <span class="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">Logbook.</span>
+            </h1>
+            <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Musings on scaling high-growth ecosystems, technical leadership frameworks, and architecting seamless Shopify and Zendesk integrations.
+            </p>
+        </section>
+
+        <!-- Blog List Container -->
+        <div class="space-y-1">
+            {sortedPosts.map((post: any) => (
+                <article class="gsap-reveal group relative py-12 px-0 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 relative z-10">
+                        <time class="font-label text-sm text-on-surface-variant/60 w-32 shrink-0 pt-1 uppercase tracking-widest">{post.frontmatter.date}</time>
+                        
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-[10px] font-label font-bold text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded uppercase">{post.frontmatter.tag || post.frontmatter.type || "ARTICLE"}</span>
+                            </div>
+                            
+                            <h2 class="text-3xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors mb-4">
+                                {post.frontmatter.title}
+                            </h2>
+                            
+                            <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+                                {post.frontmatter.description}
+                            </p>
+                            
+                            <div class="mt-6 flex items-center gap-2 text-primary font-label font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 transition-transform">
+                                <a href={post.customUrl} class="after:absolute after:inset-0">
+                                    READ ARTICLE 
+                                    <span class="material-symbols-outlined text-sm align-middle" data-icon="arrow_forward">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hover Background Effect -->
+                    <div class="absolute inset-0 bg-surface-container-low opacity-0 group-hover:opacity-100 -mx-8 rounded-xl transition-all duration-300 -z-0"></div>
+                </article>
+            ))}
+        </div>
+    </main>
+</BaseLayout>

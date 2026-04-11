@@ -1,0 +1,21 @@
+---
+export async function getStaticPaths() {
+  const talks = import.meta.glob('../../../data/talks/*.md', { eager: true });
+  
+  return Object.values(talks).map((talk: any) => {
+    // Extract slug from the filepath
+    const filepath = talk.file;
+    const slug = filepath.split('/').pop().replace('.md', '');
+    
+    return {
+      params: { slug },
+      props: { talk },
+    };
+  });
+}
+
+const { talk } = Astro.props;
+---
+
+<!-- Render standard markdown using its defined layout -> PostLayout -->
+<talk.default />

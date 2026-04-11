@@ -1,0 +1,129 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<html lang="en" class="light">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<title>{title || "Sakar Upadhyaya Khatiwada | The Kinetic Architect"}</title>
+    
+    <SEO title={title} description={description} image={image} />
+
+	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" is:inline></script>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Space_Grotesk:wght@500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+	<script is:inline>
+	    tailwind.config = {
+		  darkMode: "class",
+		  theme: {
+			extend: {
+			  colors: {
+				"surface-container-high": "#e1e8fd",
+                "surface-container-low": "#f1f3ff",
+                "background": "#f9f9ff",
+                "inverse-surface": "#293040",
+                "surface-container-highest": "#dce2f7",
+                "tertiary-fixed": "#e1e0ff",
+                "on-secondary-container": "#5c6274",
+                "on-surface-variant": "#424754",
+                "on-primary-fixed": "#001a42",
+                "tertiary-fixed-dim": "#c0c1ff",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-tint": "#005ac2",
+                "on-tertiary-fixed-variant": "#2f2ebe",
+                "on-secondary-fixed": "#141b2b",
+                "outline-variant": "#c2c6d6",
+                "error-container": "#ffdad6",
+                "surface-variant": "#dce2f7",
+                "secondary-fixed-dim": "#c0c6db",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-container": "#fffbff",
+                "surface-dim": "#d3daef",
+                "on-error": "#ffffff",
+                "secondary-container": "#d9dff5",
+                "on-primary-container": "#fefcff",
+                "primary-fixed-dim": "#adc6ff",
+                "primary": "#0058be",
+                "on-tertiary-fixed": "#07006c",
+                "surface-bright": "#f9f9ff",
+                "on-primary-fixed-variant": "#004395",
+                "on-error-container": "#93000a",
+                "secondary": "#575e70",
+                "tertiary-container": "#6063ee",
+                "on-surface": "#141b2b",
+                "on-background": "#141b2b",
+                "outline": "#727785",
+                "on-secondary-fixed-variant": "#404758",
+                "inverse-primary": "#adc6ff",
+                "tertiary": "#4648d4",
+                "surface": "#f9f9ff",
+                "error": "#ba1a1a",
+                "primary-container": "#2170e4",
+                "surface-container-lowest": "#ffffff",
+                "inverse-on-surface": "#edf0ff",
+                "secondary-fixed": "#dce2f7",
+                "primary-fixed": "#d8e2ff",
+                "surface-container": "#e9edff"
+			  }
+			}
+		  }
+		}
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" is:inline></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" is:inline></script>
+	<style>
+		.kinetic-gradient {
+			background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+		}
+		.timeline-line {
+			background: linear-gradient(to bottom, #0058be, transparent);
+		}
+        .kinetic-architect-bg {
+			background: radial-gradient(circle at 0% 0%, rgba(33, 112, 228, 0.05) 0%, transparent 50%),
+						radial-gradient(circle at 100% 100%, rgba(70, 72, 212, 0.05) 0%, transparent 50%);
+		}
+	</style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+	<Nav />
+	
+	<slot />
+
+	<Footer />
+
+    <script is:inline>
+        // Global GSAP Initiation
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const revealElements = document.querySelectorAll(".gsap-reveal");
+            revealElements.forEach((el) => {
+                gsap.fromTo(el, 
+                    { opacity: 0, y: 30 }, 
+                    { 
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 0.8, 
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 85%", // Triggers when the top of element hits 85% of viewport
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+</body>
+</html>
