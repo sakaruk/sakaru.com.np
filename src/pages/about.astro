@@ -1,27 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const currentYear = new Date().getFullYear();
+const experienceYears = currentYear - 2013;
 ---
 
 <BaseLayout 
-    title="About Sakar | Zendesk Expert & Shopify Plus Engineer (10+ Years Experience)"
-    description="Learn more about Sakar Upadhyaya Khatiwada, a senior engineer with a decade of expertise in SaaS integrations. From Stylo (US) to freelance consulting, building resilient digital ecosystems from Nepal."
+    title={`About Sakar | Zendesk Solution Architect & Shopify Engineer (${experienceYears}+ Years Experience)`}
+    description={`Learn more about Sakar Upadhyaya Khatiwada, a solution architect with over ${experienceYears} years of expertise in building web applications and business solutions. From Stylo (US) to global consulting.`}
 >
     <main class="pt-24 pb-20 max-w-7xl mx-auto px-8 w-full overflow-hidden">
         <!-- Hero Section -->
         <section class="max-w-7xl mx-auto mb-32 gsap-reveal">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7">
-                    <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">10+ Years of Engineering Excellence</span>
+                    <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">{experienceYears}+ Years of Engineering Excellence</span>
                     <h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-8">
-                        Zendesk Developer & <span class="text-primary italic">Shopify</span> Engineer.
+                        <span class="text-primary italic">Building and Integrating</span> Systems for better outcomes.
                     </h1>
                     <p class="font-body text-xl text-on-surface-variant leading-relaxed max-w-2xl">
-                        Based in <span class="text-primary font-semibold">Madhyapur Thimi, Bhaktapur, Nepal</span>, I build custom solutions for global clients like <span class="text-primary font-semibold">Stylo</span>, <span class="text-primary font-semibold">ClickSend</span>, and <span class="text-primary font-semibold">ApplyBoard</span>. I specialize in complex SaaS integrations, custom Zendesk Marketplace apps, and high-performance Shopify Plus engineering.
+                        Based in <span class="text-primary font-semibold">Nepal</span>, I have built custom solutions for global clients like <span class="text-primary font-semibold">Stylo</span>, <span class="text-primary font-semibold">ClickSend</span>, and <span class="text-primary font-semibold">ApplyBoard</span>. I specialize in <span class="text-primary font-bold">Customer Experience (CX)</span>, <span class="text-primary font-bold">Management Systems</span>, and high-performance <span class="text-primary font-bold">Shopify engineering</span>.
                     </p>
                 </div>
                 <div class="lg:col-span-5 relative group">
                     <div class="absolute -inset-4 bg-primary-fixed rounded-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                    <img alt="Sakar Upadhyaya Khatiwada" class="relative w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUuc8cvQuzZjxkCfLk3dj5U70hCdg2Lm9m-ykOYRGrtc25agQC9Wzl-gNiifxRpS_f-_ZILIJB_FnOmg0Cxax4R0JTZSEsf2j_uQ2EAGO0nQ346Li_RNBh1cPZEeL7NsPeYKJFs4v_NgdaJbs92v6iehaoEALWmqTxXEfSwbyE6KYbs4IJg185jy80dOcM_kyrRDJHdRq4qyw-cKg7uikwjjYE5y53KuKStYaTSI1TqUEhtXC32wA5LBtCzaByc_P7C9GsTupb7hGP"/>
+                    <img alt="Sakar Upadhyaya Khatiwada" class="relative w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl" src="/images/site_image.png"/>
                 </div>
             </div>
         </section>
@@ -87,33 +90,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <!-- Shopify Card -->
                 <div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-lowest transition-colors duration-300 min-h-[400px] border border-transparent hover:border-slate-200">
                     <div>
-                        <span class="font-label text-xs font-bold text-tertiary mb-6 block">E-COMMERCE ARCHITECTURE</span>
-                        <h3 class="font-headline text-4xl font-bold mb-4 tracking-tight">Shopify Ecosystem Specialist</h3>
+                        <span class="font-label text-xs font-bold text-tertiary mb-6 block">E-COMMERCE ECOSYSTEMS</span>
+                        <h3 class="font-headline text-4xl font-bold mb-4 tracking-tight">Shopify Specialist</h3>
                         <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                            Developing robust, high-conversion headless commerce experiences and bespoke private apps that extend the core capabilities of Shopify Plus.
+                            From Shopify App Development to Theme Customization and SEO improvements. Building scalable E-commerce ecosystems that yield high results.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-4">
-                        <span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-sm text-on-surface">Polaris UI</span>
+                        <span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-sm text-on-surface">App Development</span>
                         <span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-sm text-on-surface">Liquid</span>
-                        <span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-sm text-on-surface">Remix</span>
+                        <span class="px-4 py-2 bg-surface-container-highest rounded-lg font-label text-sm text-on-surface">SEO</span>
                     </div>
                 </div>
 
                 <!-- Zendesk Card -->
                 <div class="bg-primary kinetic-gradient p-10 rounded-xl text-on-primary flex flex-col justify-between min-h-[400px]">
                     <div>
-                        <span class="font-label text-xs font-bold opacity-80 mb-6 block uppercase">CX INTEGRATION</span>
-                        <h3 class="font-headline text-4xl font-bold mb-4 tracking-tight">Zendesk Expert</h3>
+                        <span class="font-label text-xs font-bold opacity-80 mb-6 block uppercase">CX ARCHITECTURE</span>
+                        <h3 class="font-headline text-4xl font-bold mb-4 tracking-tight">Zendesk Solution Architect</h3>
                         <p class="opacity-90 leading-relaxed mb-8">
-                            Deep-tier integrations connecting support workflows directly into product ecosystems via custom Zendesk Apps and API middleware.
+                            Optimizing support workflows through process audits and engineering. Building custom Zendesk Apps that bridge systems with APIs and AI.
                         </p>
                     </div>
                     <div class="flex flex-col gap-6">
                         <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg font-label text-sm">CX Strategy</span>
                             <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg font-label text-sm">Zendesk Apps</span>
-                            <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg font-label text-sm">ZAF Client</span>
-                            <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg font-label text-sm">Sunshine</span>
+                            <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg font-label text-sm">API & AI</span>
                         </div>
                     </div>
                 </div>
@@ -196,7 +199,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <span class="font-label text-primary font-bold text-sm bg-primary-fixed px-3 py-1 rounded-full whitespace-nowrap">JUNE 2019 — PRESENT</span>
                             </div>
                             <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                                Providing high-level architectural consulting for <span class="text-primary font-semibold">Zendesk</span> and <span class="text-primary font-semibold">Shopify Plus</span>. Bridging the gap between disparate platforms for international clients.
+                                Providing high-level architectural consulting for <span class="text-primary font-semibold">Zendesk</span> and <span class="text-primary font-semibold">Shopify</span>. Bridging the gap between management systems and customer experience.
                             </p>
                         </div>
 
@@ -268,9 +271,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <section class="max-w-7xl mx-auto px-8 py-32 bg-primary-fixed/30 rounded-[3rem] text-center mb-10 gsap-reveal">
             <div class="max-w-3xl mx-auto">
                 <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-6 block">Ready for the Next Phase?</span>
-                <h2 class="font-headline text-5xl md:text-6xl font-extrabold text-on-primary-fixed mb-10 leading-tight">Let's discuss high-value engineering.</h2>
+                <h2 class="font-headline text-5xl md:text-6xl font-extrabold text-on-primary-fixed mb-10 leading-tight">Ready to Automate and Digitize?</h2>
                 <p class="text-on-primary-fixed-variant text-xl mb-12 leading-relaxed">
-                    Currently available for senior architectural consultations and complex platform integrations. Whether you're scaling a Shopify Plus store or streamlining CX via Zendesk, let's build something resilient.
+                    Currently available for architectural consultations and management system integrations. Whether you're scaling your Shopify store or streamlining CX via Zendesk, let's reduce your workflow friction.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
                     <button class="w-full sm:w-auto bg-primary text-on-primary font-headline font-bold py-5 px-12 rounded-2xl transition-all hover:scale-105 hover:shadow-xl active:scale-95">

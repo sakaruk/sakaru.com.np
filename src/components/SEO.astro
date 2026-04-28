@@ -5,13 +5,17 @@ export interface Props {
   image?: string;
 }
 
+const currentYear = new Date().getFullYear();
+const experienceYears = currentYear - 2013;
+
 const {
   title = "Zendesk Developer & Shopify Engineer | Sakar Upadhyaya Khatiwada",
-  description = "Freelance Zendesk developer and Shopify engineer based in Nepal. 10+ years specializing in complex SaaS integrations, custom Zendesk apps, and Shopify Plus engineering.",
-  image = "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&q=75",
+  description = `Zendesk Developer & Shopify Engineer based in Nepal. ${experienceYears}+ years experience in building web applications and solutions.`,
+  image = "/images/site_image.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+const resolvedImage = image.startsWith('http') ? image : new URL(image, Astro.site || Astro.url.origin);
 
 // JSON-LD Person Schema based on April 2026 Audit
 const schema = {
@@ -20,13 +24,13 @@ const schema = {
   "name": "Sakar Upadhyaya Khatiwada",
   "alternateName": "Sakar UK",
   "url": "https://sakaru.com.np",
-  "jobTitle": "Zendesk Developer & Shopify Plus Engineer",
+  "jobTitle": "Zendesk Solution Architect & Shopify Engineer",
   "description": description,
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "St. Xavier's College, Kathmandu"
   },
-  "knowsAbout": ["Zendesk ZAF", "Shopify Plus", "React", "TypeScript", "Laravel", "ZIS", "Sunshine"],
+  "knowsAbout": ["Zendesk ZAF", "Shopify App Development", "Customer Experience (CX)", "Management Systems", "React", "TypeScript", "Laravel", "APIs and Automations"],
   "worksFor": {
     "@type": "Organization",
     "name": "Freelance Consultant"
@@ -53,14 +57,14 @@ const schema = {
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={image} />
+<meta property="og:image" content={resolvedImage} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={image} />
+<meta property="twitter:image" content={resolvedImage} />
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
