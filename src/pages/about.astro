@@ -6,8 +6,8 @@ const experienceYears = currentYear - 2013;
 ---
 
 <BaseLayout 
-    title={`About Sakar | Zendesk Solution Architect & Shopify Engineer (${experienceYears}+ Years Experience)`}
-    description={`Learn more about Sakar Upadhyaya Khatiwada, a solution architect with over ${experienceYears} years of expertise in building web applications and business solutions. From Stylo (US) to global consulting.`}
+    title={`About Sakar Upadhyaya Khatiwada | Zendesk Solution Architect & Shopify Engineer`}
+    description={`Sakar Upadhyaya Khatiwada is a Nepal-based Zendesk Solution Architect and Shopify Engineer with ${experienceYears}+ years of experience. He has engineered enterprise-grade CX platforms, custom Zendesk apps, and scalable e-commerce solutions for global clients including Stylo, ClickSend, and ApplyBoard.`}
 >
     <main class="pt-24 pb-20 max-w-7xl mx-auto px-8 w-full overflow-hidden">
         <!-- Hero Section -->
@@ -30,150 +30,179 @@ const experienceYears = currentYear - 2013;
         </section>
 
         <!-- Professional Journey Timeline Section -->
-        <section class="max-w-7xl mx-auto mb-32 gsap-reveal">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                <div class="lg:col-span-4">
-                    <h2 class="font-headline text-4xl font-extrabold sticky top-32">Professional <br/>Journey</h2>
+        <section class="max-w-7xl mx-auto mb-32">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Sidebar -->
+                <div class="lg:w-1/3">
+                    <div class="sticky top-32">
+                        <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">Experience</span>
+                        <h2 class="font-headline text-5xl font-extrabold leading-tight mb-6">Professional <br/>Journey</h2>
+                        <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                            A track record of delivering robust, scalable solutions and leading engineering efforts across global organizations.
+                        </p>
+                        <!-- Decorative element -->
+                        <div class="w-16 h-2 rounded-full bg-gradient-to-r from-primary to-tertiary"></div>
+                    </div>
                 </div>
-                <div class="lg:col-span-8 relative">
+
+                <!-- Timeline -->
+                <div class="lg:w-2/3 relative pt-4">
                     <!-- Timeline Line -->
-                    <div class="absolute left-0 md:left-6 top-2 bottom-0 w-px timeline-line hidden md:block origin-top"></div>
+                    <div class="absolute left-8 top-8 bottom-0 w-1 bg-gradient-to-b from-primary via-tertiary to-transparent timeline-line rounded-full hidden md:block origin-top"></div>
                     
-                    <div class="space-y-16">
+                    <div class="space-y-12">
                         <!-- Freelance Role -->
-                        <div class="relative pl-0 md:pl-16 group gsap-stagger">
-                            <div class="absolute left-5 top-2 w-3 h-3 rounded-full bg-primary ring-4 ring-primary-fixed hidden md:block"></div>
-                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 gap-2">
-                                <div>
-                                    <h3 class="font-headline text-2xl font-bold">Consultant / Development</h3>
-                                    <p class="font-label text-sm text-tertiary font-bold">Freelance</p>
+                        <div class="relative pl-0 md:pl-24 group journey-item">
+                            <!-- Timeline Node -->
+                            <div class="absolute left-6 top-8 w-5 h-5 rounded-full bg-surface ring-[6px] ring-primary z-10 hidden md:block journey-node transition-all duration-300 group-hover:scale-125 group-hover:ring-tertiary shadow-[0_0_15px_rgba(var(--color-primary-rgb),0.5)]"></div>
+                            
+                            <!-- Card -->
+                            <div class="bg-surface-container-low rounded-3xl p-8 md:p-10 border border-transparent hover:border-primary/20 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110 duration-500"></div>
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                                    <div>
+                                        <h3 class="font-headline text-2xl font-bold text-on-surface">Consultant / Development</h3>
+                                        <p class="font-label text-base text-primary font-bold mt-1">Freelance</p>
+                                    </div>
+                                    <span class="font-label text-on-surface-variant font-bold text-xs bg-surface-container-highest px-4 py-2 rounded-full uppercase tracking-wider self-start sm:self-auto border border-surface-container-highest">JUNE 2019 — PRESENT</span>
                                 </div>
-                                <span class="font-label text-primary font-bold text-sm bg-primary-fixed px-3 py-1 rounded-full whitespace-nowrap">JUNE 2019 — PRESENT</span>
+                                <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                                    Delivering high-level architectural consulting for <span class="text-primary font-semibold">Zendesk</span> and <span class="text-primary font-semibold">Shopify</span>. Focused on building custom solutions, training teams on the technology to achieve better results, and designing the processes and systems that bridge management tools with exceptional customer experience.
+                                </p>
+                                <ul class="space-y-4 font-body text-on-surface-variant">
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Built Zendesk app for <span class="text-primary font-semibold">ClickSend Australia</span></span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Consulted and built custom scripts to improve the customer support flow for <span class="text-primary font-semibold">ApplyBoard Canada</span> and <span class="text-primary font-semibold">Barlife Denmark</span></span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Assisted <span class="text-primary font-semibold">Zendesk Admins</span> with development tasks and the implementation of Webhooks and Zendesk Integration Service (ZIS) to improve support agent workflows</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Helped a <span class="text-primary font-semibold">Shopify store based in Switzerland</span> improve their SEO performance by auditing their store and theme and recommending targeted integrations</span>
+                                    </li>
+                                </ul>
                             </div>
-                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                                Providing high-level architectural consulting for <span class="text-primary font-semibold">Zendesk</span> and <span class="text-primary font-semibold">Shopify</span>. Focused on building custom solutions for Zendesk , Helping train people on the technology to get better results, making flow for developing the process to build systems optimally. Bridging the gap between management systems and customer experience.
-                            </p>
-                            <ul class="space-y-4 font-body text-on-surface-variant">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Built Zendesk app for <span class="text-primary font-semibold">ClickSend Australia</span></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Consulted and built custom scripts to improve the customer support flow for <span class="text-primary font-semibold">ApplyBoard Canada</span> and <span class="text-primary font-semibold">Barlife Denmark</span></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Assisted <span class="text-primary font-semibold">Zendesk Admins</span> with development related tasks and implementation of Webhooks and Zendesk Integration Service (ZIS) to improve the flow of the support agents</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Helped <span class="text-primary font-semibold">a Shopify store based in Switzerland</span> to make their SEO flow better by analyzing their store and theme and suggesting integrations</span>
-                                </li>
-                            </ul>
                         </div>
 
                         <!-- Senior Role -->
-                        <div class="relative pl-0 md:pl-16 group gsap-stagger">
-                            <div class="absolute left-5 top-2 w-3 h-3 rounded-full bg-slate-300 ring-4 ring-primary-fixed hidden md:block"></div>
-                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 gap-2">
-                                <div>
-                                    <h3 class="font-headline text-2xl font-bold">Zendesk / Frontend Engineer</h3>
-                                    <p class="font-label text-sm text-tertiary font-bold">Stylo (US)</p>
+                        <div class="relative pl-0 md:pl-24 group journey-item">
+                            <div class="absolute left-6 top-8 w-5 h-5 rounded-full bg-surface ring-[6px] ring-tertiary/70 z-10 hidden md:block journey-node transition-all duration-300 group-hover:scale-125 group-hover:ring-tertiary"></div>
+                            
+                            <div class="bg-surface-container-low rounded-3xl p-8 md:p-10 border border-transparent hover:border-tertiary/20 transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/5 hover:-translate-y-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110 duration-500"></div>
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                                    <div>
+                                        <h3 class="font-headline text-2xl font-bold text-on-surface">Zendesk / Frontend Engineer</h3>
+                                        <p class="font-label text-base text-tertiary font-bold mt-1">Stylo (US)</p>
+                                    </div>
+                                    <span class="font-label text-on-surface-variant font-bold text-xs bg-surface-container-highest px-4 py-2 rounded-full uppercase tracking-wider self-start sm:self-auto border border-surface-container-highest">DEC 2022 — APRIL 2024</span>
                                 </div>
-                                <span class="font-label text-primary font-bold text-sm bg-primary-fixed px-3 py-1 rounded-full whitespace-nowrap">DEC 2022 — APRIL 2024</span>
+                                <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                                    Developed the front-end interface for <span class="text-primary font-semibold">Stylo's Zendesk AI integrations</span>, transforming complex designs into fully API-connected applications used by enterprise support teams globally.
+                                </p>
+                                <ul class="space-y-4 font-body text-on-surface-variant">
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Engineered the <span class="text-primary font-semibold">Stylo Assist App</span> (ZAF Client + React), now a key AI solution in the Zendesk Marketplace.</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Integrated REST APIs via the Zendesk App Framework (ZAF) to deliver a user-friendly AI companion for support agents.</span>
+                                    </li>
+                                     <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Integrated Feature Flags and product metrics tooling to enable fact-based decision-making by the product management team.</span>
+                                    </li>
+                                </ul>
                             </div>
-                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                                Developing the interface for <span class="text-primary font-semibold">Stylo's Zendesk AI integrations</span>. Making designs into working applications that are connected to the APIs.
-                            </p>
-                            <ul class="space-y-4 font-body text-on-surface-variant">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Engineered the <span class="text-primary font-semibold">Stylo Assist App</span> (ZAF Client + React), now a key AI solution in the Zendesk Marketplace.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Integrated APIs and used Zendesk App Framework to make a user friendly solutions for support agents as their AI companion.</span>
-                                </li>
-                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
-                                    <span>Integrated Feature Flags and Metrics tools to analyze the product usages so the product management can take fact based decision</span>
-                                </li>
-                            </ul>
                         </div>
 
                         <!-- Full Stack Role -->
-                        <div class="relative pl-0 md:pl-16 group gsap-stagger">
-                            <div class="absolute left-5 top-2 w-3 h-3 rounded-full bg-slate-300 ring-4 ring-slate-100 hidden md:block"></div>
-                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 gap-2">
-                                <div>
-                                    <h3 class="font-headline text-2xl font-bold">Full Stack Developer</h3>
-                                    <p class="font-label text-sm text-tertiary font-bold">Proshore Nepal</p>
+                        <div class="relative pl-0 md:pl-24 group journey-item">
+                            <div class="absolute left-6 top-8 w-5 h-5 rounded-full bg-surface ring-[6px] ring-secondary/50 z-10 hidden md:block journey-node transition-all duration-300 group-hover:scale-125 group-hover:ring-secondary"></div>
+                            
+                            <div class="bg-surface-container-low rounded-3xl p-8 md:p-10 border border-transparent hover:border-secondary/20 transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/5 hover:-translate-y-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110 duration-500"></div>
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                                    <div>
+                                        <h3 class="font-headline text-2xl font-bold text-on-surface">Full Stack Developer</h3>
+                                        <p class="font-label text-base text-secondary font-bold mt-1">Proshore Nepal</p>
+                                    </div>
+                                    <span class="font-label text-on-surface-variant font-bold text-xs bg-surface-container-highest px-4 py-2 rounded-full uppercase tracking-wider self-start sm:self-auto border border-surface-container-highest">March 2014 — Nov 2022</span>
                                 </div>
-                                <span class="font-label text-secondary font-bold text-sm bg-secondary-fixed px-3 py-1 rounded-full whitespace-nowrap">March 2014 — Nov 2022</span>
+                                <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                                    Developed and optimized high-traffic SaaS applications for European and Australian clients, and built internal systems that supported full-cycle organizational operations.
+                                </p>
+                                <ul class="space-y-4 font-body text-on-surface-variant">
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-secondary bg-secondary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Maintained , Upgraded and Developed new feature for a <span class="text-primary font-semibold">Transport Management System</span> for <span class="text-primary font-semibold">Demeubeltaxi</span> with integration with other systems to make a unified management tool to run an organization.</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-secondary bg-secondary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Worked on custom Laravel application which was multitenant with custom drag and drop theme system</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-secondary bg-secondary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Built custom Zendesk applications for the Marketplace and scaled application infrastructure to handle high data volumes using cloud technology.</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-secondary bg-secondary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Leveraged AWS services (Lambda, DynamoDB, SQS, EC2) to maintain and evolve a high-data-volume product with continuous feature delivery.</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-secondary bg-secondary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Led and onboarded a development team, guiding members throughout the full product development lifecycle.</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-secondary bg-secondary/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Collaborated with a highly skilled Australian team on a Blockchain-based product as a Frontend Engineer, delivering features using Test-Driven Development (TDD).</span>
+                                    </li>
+                                </ul>
                             </div>
-                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                                Developed and optimized high-traffic SaaS applications for European and Austrialian clients, built systems that help the full organization operations.
-                            </p>
-                            <ul class="space-y-4 font-body text-on-surface-variant">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Maintained , Upgraded and Developed new feature for a <span class="text-primary font-semibold">Transport Management System</span> for <span class="text-primary font-semibold">Demeubeltaxi</span> with integration with other systems to make a unified management tool to run an organization.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Worked on custom Laravel application which was multitenant with custom drag and drop theme system</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Built Custom Zendesk Application for marketplace , Scaled application flow to handle huge data using cloud technology </span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Worked with AWS technologies for high data volume system using tools like Lambda , DynamoDB , SQS , EC2 to maintain a product and upgrade its feature</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Led a team and onboarded people to work together in a product and guide them throughout the development process</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Worked with highly skilled team based in Australia for a product using Blockchain as a Frontend Engineer to deliver app using Test Driven Development</span>
-                                </li>
-                            </ul>
                         </div>
 
                         <!-- Junior Role / Associate -->
-                        <div class="relative pl-0 md:pl-16 group gsap-stagger">
-                            <div class="absolute left-5 top-2 w-3 h-3 rounded-full bg-slate-300 ring-4 ring-slate-100 hidden md:block"></div>
-                            <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 gap-2">
-                                <div>
-                                    <h3 class="font-headline text-2xl font-bold">Web Developer</h3>
-                                    <p class="font-label text-sm text-tertiary font-bold">Proshore Nepal</p>
+                        <div class="relative pl-0 md:pl-24 group journey-item">
+                            <div class="absolute left-6 top-8 w-5 h-5 rounded-full bg-surface ring-[6px] ring-slate-400/50 z-10 hidden md:block journey-node transition-all duration-300 group-hover:scale-125 group-hover:ring-slate-400"></div>
+                            
+                            <div class="bg-surface-container-low rounded-3xl p-8 md:p-10 border border-transparent hover:border-slate-400/20 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-400/5 hover:-translate-y-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-slate-400/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110 duration-500"></div>
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                                    <div>
+                                        <h3 class="font-headline text-2xl font-bold text-on-surface">Web Developer</h3>
+                                        <p class="font-label text-base text-slate-400 font-bold mt-1">Proshore Nepal</p>
+                                    </div>
+                                    <span class="font-label text-on-surface-variant font-bold text-xs bg-surface-container-highest px-4 py-2 rounded-full uppercase tracking-wider self-start sm:self-auto border border-surface-container-highest">March 2013 — Feb 2014</span>
                                 </div>
-                                <span class="font-label text-secondary font-bold text-sm bg-secondary-fixed px-3 py-1 rounded-full whitespace-nowrap">March 2013 — Feb 2014</span>
+                                <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                                    Began my career building sites on a custom CodeIgniter framework, delivering numerous agency projects. Progressively transitioned to WordPress for faster client delivery, developing custom themes and plugins tailored to each site's specific needs.
+                                </p>
+                                <ul class="space-y-4 font-body text-on-surface-variant">
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-slate-400 bg-slate-400/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Integrated custom backends and Content Management Systems for designs across <span class="text-primary font-semibold">more than 30 client sites</span></span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-slate-400 bg-slate-400/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Transitioned to <span class="text-primary font-semibold">WordPress</span>, building custom themes from scratch and developing plugins to address each site's unique requirements</span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-slate-400 bg-slate-400/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Built custom web application using <span class="text-primary font-semibold">CakePHP</span></span>
+                                    </li>
+                                    <li class="flex items-start gap-4">
+                                        <span class="material-symbols-outlined text-slate-400 bg-slate-400/10 p-1 rounded-full text-sm mt-0.5">check</span>
+                                        <span>Used templating engines to build custom themes for SaaS applications</span>
+                                    </li>
+                                </ul>
                             </div>
-                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                                Started with developing sites on custom Codeigniter framework. Developed Numerous agency sites. Moved to developing solutions using WordPress instead of using Custom  frameworks for faster development.  
-                            </p>
-                            <ul class="space-y-4 font-body text-on-surface-variant">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Integrated custom backend and Content Management System for the designs provided <span class="text-primary font-semibold">for more than 30 sites</span></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Moved to <span class="text-primary font-semibold">WordPress</span> integration building themes from scratch and plugins for custom needs of the websites</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Built custom web application using <span class="text-primary font-semibold">CakePHP</span></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-slate-400 text-xl mt-1">check_circle</span>
-                                    <span>Used templating engines to create custom themes for SaaS Application</span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -244,7 +273,7 @@ const experienceYears = currentYear - 2013;
                         <span class="font-label text-xs font-bold text-tertiary mb-6 block">E-COMMERCE ECOSYSTEMS</span>
                         <h3 class="font-headline text-4xl font-bold mb-4 tracking-tight">Shopify Specialist</h3>
                         <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                            From Shopify App Development to Theme Customization and SEO improvements. Building scalable E-commerce ecosystems that yield high results.
+                            From Shopify App Development to Theme Customization and SEO optimization. Building scalable e-commerce ecosystems engineered to deliver measurable, high-impact results.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-4">
@@ -260,7 +289,7 @@ const experienceYears = currentYear - 2013;
                         <span class="font-label text-xs font-bold opacity-80 mb-6 block uppercase">CX ARCHITECTURE</span>
                         <h3 class="font-headline text-4xl font-bold mb-4 tracking-tight">Zendesk Solution Architect</h3>
                         <p class="opacity-90 leading-relaxed mb-8">
-                            Optimizing support workflows through process audits and engineering. Building custom Zendesk Apps that bridge systems with APIs and AI.
+                            Optimizing support workflows through process audits and targeted engineering. Building custom Zendesk apps that seamlessly bridge your existing systems with APIs and AI.
                         </p>
                     </div>
                     <div class="flex flex-col gap-6">
@@ -272,67 +301,175 @@ const experienceYears = currentYear - 2013;
                     </div>
                 </div>
 
-                <!-- Full Stack Card -->
-                <div class="bg-inverse-surface p-10 rounded-xl text-inverse-on-surface md:col-span-2 flex flex-col md:flex-row gap-12 items-center">
-                    <div class="flex-1">
-                        <span class="font-label text-xs font-bold text-tertiary-fixed-dim mb-6 block">TECHNICAL STACK</span>
-                        <h3 class="font-headline text-4xl font-bold mb-4">Enterprise Full-Stack Mastery</h3>
-                        <p class="text-slate-400 text-lg leading-relaxed">
-                            Leveraging Node.js, React, and Laravel to build distributed systems that prioritize security, uptime, and developer ergonomics.
+                <!-- Full Stack Card — replaced by full skills section below -->
+            </div>
+        </section>
+
+        <!-- Full Technical Arsenal -->
+        <section class="max-w-7xl mx-auto mb-32 gsap-reveal">
+            <div class="relative bg-inverse-surface rounded-2xl overflow-hidden shadow-2xl">
+                <!-- Glowing top accent -->
+                <div class="h-1 w-full bg-gradient-to-r from-primary via-tertiary to-secondary"></div>
+
+                <div class="p-10 md:p-14">
+                    <!-- Header -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                        <div>
+                            <span class="font-label text-xs font-bold text-tertiary uppercase tracking-[0.3em] mb-3 block">Complete Skill Set</span>
+                            <h2 class="font-headline text-4xl md:text-5xl font-black text-white leading-tight">Technical Arsenal</h2>
+                        </div>
+                        <p class="text-slate-400 max-w-sm text-sm leading-relaxed">
+                            A comprehensive view of every technology, platform, and discipline I bring to the table — across {experienceYears}+ years of engineering.
                         </p>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 flex-1 w-full text-slate-300">
-                        <div class="bg-slate-800 p-4 rounded-lg flex items-center gap-3">
-                            <span class="font-label">Node.js</span>
+
+                    <!-- Overview Level -->
+                    <div class="mb-10">
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="skill-tag skill-tag--primary">JavaScript / TypeScript</span>
+                            <span class="skill-tag skill-tag--tertiary">React & Next.js</span>
+                            <span class="skill-tag skill-tag--secondary">PHP / Laravel</span>
+                            <span class="skill-tag skill-tag--green">Zendesk Apps & API</span>
+                            <span class="skill-tag skill-tag--amber">AWS & Cloud Infrastructure</span>
+                            <span class="skill-tag skill-tag--pink">Shopify Development</span>
                         </div>
-                        <div class="bg-slate-800 p-4 rounded-lg flex items-center gap-3">
-                            <span class="font-label">React</span>
+                        
+                        <button id="toggle-arsenal" class="font-label text-sm font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+                            <span id="toggle-arsenal-text">View Exhaustive List</span>
+                            <span class="material-symbols-outlined text-lg transition-transform duration-300" id="toggle-arsenal-icon">expand_more</span>
+                        </button>
+                    </div>
+
+                    <!-- Skill Categories Grid (Hidden by default) -->
+                    <div id="arsenal-list" class="space-y-10 pt-8 border-t border-white/10 hidden">
+
+                        <!-- Core Languages -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-primary text-xl" data-icon="code">code</span>
+                                <h3 class="font-label text-xs font-bold text-primary uppercase tracking-widest">Core Languages</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["HTML", "CSS", "PHP", "JavaScript", "TypeScript", "JSON", "Python"].map(skill => (
+                                    <span class="skill-tag skill-tag--primary">{skill}</span>
+                                ))}
+                            </div>
                         </div>
-                        <div class="bg-slate-800 p-4 rounded-lg flex items-center gap-3">
-                            <span class="font-label">Laravel</span>
+
+                        <!-- Frameworks & CMS -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-tertiary text-xl" data-icon="layers">layers</span>
+                                <h3 class="font-label text-xs font-bold text-tertiary uppercase tracking-widest">Frameworks & CMS</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["WordPress (Plugin/Theme)", "SmartJobBoard", "CakePHP 2 & 3", "CodeIgniter 2", "Laravel 5 & 7", "jQuery", "Node.js", "React", "Next.js", "Remix"].map(skill => (
+                                    <span class="skill-tag skill-tag--tertiary">{skill}</span>
+                                ))}
+                            </div>
                         </div>
-                        <div class="bg-slate-800 p-4 rounded-lg flex items-center gap-3">
-                            <span class="font-label">PostgreSQL</span>
+
+                        <!-- Databases -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-secondary text-xl" data-icon="database">database</span>
+                                <h3 class="font-label text-xs font-bold text-secondary uppercase tracking-widest">Databases</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["MySQL", "SQLite", "Firestore", "DynamoDB", "PostgreSQL", "Supabase", "Appwrite"].map(skill => (
+                                    <span class="skill-tag skill-tag--secondary">{skill}</span>
+                                ))}
+                            </div>
                         </div>
+
+                        <!-- Zendesk -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-green-400 text-xl" data-icon="support_agent">support_agent</span>
+                                <h3 class="font-label text-xs font-bold text-green-400 uppercase tracking-widest">Zendesk Expertise</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["Implementation", "Support Applications", "Theming", "Automations", "Trainings", "AI Agents"].map(skill => (
+                                    <span class="skill-tag skill-tag--green">{skill}</span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <!-- Infrastructure & DevOps -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-amber-400 text-xl" data-icon="cloud">cloud</span>
+                                <h3 class="font-label text-xs font-bold text-amber-400 uppercase tracking-widest">Infrastructure & DevOps</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["Git / GitHub / Bitbucket", "SSH", "Linux Terminal", "DirectAdmin", "cPanel", "Redis", "Apache", "AWS Lambda", "AWS DynamoDB", "AWS CloudWatch", "Google App Engine", "Cloud SQL", "Cloudflare Pages", "Cloudflare Workers", "Netlify", "Vercel", "Fly.io", "GitHub Actions"].map(skill => (
+                                    <span class="skill-tag skill-tag--amber">{skill}</span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <!-- Platforms & Specializations -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-pink-400 text-xl" data-icon="shopping_bag">shopping_bag</span>
+                                <h3 class="font-label text-xs font-bold text-pink-400 uppercase tracking-widest">Platforms & Specializations</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["Chrome Extension Dev", "Shopify App Development", "Shopify Theme Customization"].map(skill => (
+                                    <span class="skill-tag skill-tag--pink">{skill}</span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <!-- Management & Process -->
+                        <div class="skill-row group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-slate-400 text-xl" data-icon="groups">groups</span>
+                                <h3 class="font-label text-xs font-bold text-slate-400 uppercase tracking-widest">Management & Process</h3>
+                                <div class="flex-1 h-px bg-slate-700"></div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                {["Email / Slack", "Trello", "Jira", "ClickUp", "Requirements Analysis", "Agile Scrum", "Kanban", "Digitization Consulting"].map(skill => (
+                                    <span class="skill-tag skill-tag--slate">{skill}</span>
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Fragments (Code Context) -->
-        <section class="max-w-7xl mx-auto mb-48 gsap-reveal">
-            <div class="bg-inverse-surface rounded-xl overflow-hidden shadow-2xl">
-                <div class="bg-[#1e2433] px-6 py-3 flex items-center gap-2">
-                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-                    <span class="ml-4 font-label text-xs text-slate-500">manifesto.ts</span>
-                </div>
-                <div class="p-10 font-mono text-sm md:text-base overflow-x-auto text-on-primary">
-                    <pre><code><span class="text-blue-300">const</span> <span class="text-blue-200">EngineeringPhilosophy</span> = {'{'}
-  <span class="text-blue-300">resilience</span>: <span class="text-white">"Build for the 1% failure state, not the 99% success."</span>,
-  <span class="text-blue-300">precision</span>: <span class="text-white">"Code is written for humans to read and machines to execute."</span>,
-  <span class="text-blue-300">integration</span>: <span class="text-white">"Software should feel like an invisible thread connecting user intent to result."</span>
-{'}'};
-
-<span class="text-blue-300">export default</span> <span class="text-blue-200">Sakar</span>;</code></pre>
-                </div>
-            </div>
-        </section>
+        
         <!-- Final CTA / Contact Anchor -->
-        <section class="max-w-7xl mx-auto px-8 py-32 bg-primary-fixed/30 rounded-[3rem] text-center mb-10 gsap-reveal">
-            <div class="max-w-3xl mx-auto">
-                <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-6 block">Ready for the Next Phase?</span>
-                <h2 class="font-headline text-5xl md:text-6xl font-extrabold text-on-primary-fixed mb-10 leading-tight">Ready to Automate and Digitize?</h2>
-                <p class="text-on-primary-fixed-variant text-xl mb-12 leading-relaxed">
-                    Currently available for architectural consultations and management system integrations. Whether you're scaling your Shopify store or streamlining CX via Zendesk, let's reduce your workflow friction.
+        <section class="max-w-7xl mx-auto px-8 py-24 md:py-32 bg-white rounded-[3rem] text-center mb-10 gsap-reveal shadow-2xl relative overflow-hidden">
+            <!-- Decorative Background Blurs -->
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-tertiary/20 blur-[100px] rounded-full pointer-events-none"></div>
+            
+            <div class="max-w-3xl mx-auto relative z-10">
+                <span class="font-label text-sm uppercase tracking-widest text-primary font-black mb-6 block">Ready for the Next Phase?</span>
+                
+                <h2 class="text-5xl md:text-6xl font-headline font-black text-on-surface mb-8 tracking-tighter">
+                    Let's Build <br/> <span class="text-primary italic">Something Remarkable.</span>
+                </h2>
+                
+                <p class="text-on-surface-variant text-xl mb-12 leading-relaxed">
+                    Available for architectural consultations and system integration projects. Whether you're scaling your Shopify store or streamlining your CX operations via Zendesk, let's eliminate the friction holding your team back.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                    <button class="w-full sm:w-auto bg-primary text-on-primary font-headline font-bold py-5 px-12 rounded-2xl transition-all hover:scale-105 hover:shadow-xl active:scale-95">
-                        Inquire via Email
-                    </button>
-                    <a class="w-full sm:w-auto font-headline font-bold text-primary hover:text-primary-variant transition-colors py-5 px-12" href="#">
-                        LinkedIn Profile
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-[2rem] font-headline font-black text-xl hover:scale-105 transition-all shadow-2xl shadow-primary/30" href="mailto:sakar@saaspal.us">
+                        Start a Consultation
+                    </a>
+                    <a class="w-full md:w-auto flex items-center justify-center gap-3 px-12 py-5 rounded-[2rem] border-2 border-slate-200 text-on-surface font-headline font-bold text-xl hover:bg-slate-50 transition-colors" href="https://linkedin.com/in/sakaruk" target="_blank" rel="noopener noreferrer">
+                        Connect on LinkedIn
                     </a>
                 </div>
             </div>
@@ -343,23 +480,7 @@ const experienceYears = currentYear - 2013;
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
 
-            // Animate individual timeline elements staggering in
-            gsap.fromTo(".gsap-stagger", 
-                { opacity: 0, x: -20 },
-                { 
-                    opacity: 1, 
-                    x: 0, 
-                    stagger: 0.2,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: ".timeline-line", // Use the timeline as the trigger zone
-                        start: "top 75%",
-                    }
-                }
-            );
-
-            // Animate timeline drawing down
+            // Animate timeline line drawing down
             gsap.fromTo(".timeline-line",
                 { scaleY: 0 },
                 {
@@ -368,28 +489,124 @@ const experienceYears = currentYear - 2013;
                     ease: "none",
                     scrollTrigger: {
                         trigger: ".timeline-line",
-                        start: "top 50%",
-                        end: "bottom 30%",
+                        start: "top 60%",
+                        end: "bottom 20%",
                         scrub: true
                     }
                 }
             );
 
-            // Animate circles pop-in on the timeline
-            gsap.fromTo(".rounded-full.ring-4",
-                { scale: 0, opacity: 0 },
-                {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.4,
-                    ease: "back.out(1.7)",
-                    scrollTrigger: {
-                        trigger: ".timeline-line",
-                        start: "top 60%",
+            // Animate each journey item separately for a better scroll experience
+            gsap.utils.toArray(".journey-item").forEach((item, i) => {
+                const node = item.querySelector('.journey-node');
+                
+                // Animate the card
+                gsap.fromTo(item,
+                    { opacity: 0, y: 30 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 85%",
+                        }
                     }
+                );
+                
+                // Animate the timeline node
+                if (node) {
+                    gsap.fromTo(node,
+                        { scale: 0, opacity: 0 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.5,
+                            ease: "back.out(2)",
+                            scrollTrigger: {
+                                trigger: item,
+                                start: "top 85%",
+                            }
+                        }
+                    );
                 }
-            );
+            });
+
+            // Arsenal Learn More Toggle
+            const toggleArsenalBtn = document.getElementById("toggle-arsenal");
+            const arsenalList = document.getElementById("arsenal-list");
+            const toggleText = document.getElementById("toggle-arsenal-text");
+            const toggleIcon = document.getElementById("toggle-arsenal-icon");
+
+            if (toggleArsenalBtn && arsenalList) {
+                toggleArsenalBtn.addEventListener("click", () => {
+                    const isHidden = arsenalList.classList.contains("hidden");
+                    
+                    if (isHidden) {
+                        arsenalList.classList.remove("hidden");
+                        gsap.fromTo(arsenalList,
+                            { height: 0, opacity: 0 },
+                            { 
+                                height: "auto", 
+                                opacity: 1, 
+                                duration: 0.6, 
+                                ease: "power3.out",
+                                onComplete: () => ScrollTrigger.refresh() 
+                            }
+                        );
+                        toggleText.textContent = "Hide Exhaustive List";
+                        toggleIcon.classList.add("rotate-180");
+                    } else {
+                        gsap.to(arsenalList, {
+                            height: 0,
+                            opacity: 0,
+                            duration: 0.4,
+                            ease: "power2.in",
+                            onComplete: () => {
+                                arsenalList.classList.add("hidden");
+                                ScrollTrigger.refresh();
+                            }
+                        });
+                        toggleText.textContent = "View Exhaustive List";
+                        toggleIcon.classList.remove("rotate-180");
+                    }
+                });
+            }
         });
     </script>
+    <style>
+        /* Skill tag base */
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-family: var(--font-label, sans-serif);
+            transition: transform 0.15s ease, opacity 0.15s ease;
+            cursor: default;
+            border: 1px solid transparent;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        /* Variants */
+        .skill-tag--primary  { background: rgba(var(--color-primary-rgb, 0 88 190) / 0.15); color: #6fa8ff; border-color: rgba(111 168 255 / 0.2); }
+        .skill-tag--tertiary { background: rgba(111 168 255 / 0.08); color: #a78bfa; border-color: rgba(167 139 250 / 0.2); }
+        .skill-tag--secondary{ background: rgba(167 139 250 / 0.08); color: #93c5fd; border-color: rgba(147 197 253 / 0.2); }
+        .skill-tag--green    { background: rgba(74 222 128 / 0.1);  color: #4ade80; border-color: rgba(74 222 128 / 0.25); }
+        .skill-tag--amber    { background: rgba(251 191 36 / 0.1);  color: #fbbf24; border-color: rgba(251 191 36 / 0.25); }
+        .skill-tag--pink     { background: rgba(244 114 182 / 0.1); color: #f472b6; border-color: rgba(244 114 182 / 0.25); }
+        .skill-tag--slate    { background: rgba(148 163 184 / 0.1); color: #94a3b8; border-color: rgba(148 163 184 / 0.2); }
+
+        /* Skill row separator hover */
+        .skill-row:hover > div:first-child > div.flex-1 {
+            background: rgba(148 163 184 / 0.25);
+            transition: background 0.3s ease;
+        }
+    </style>
 </BaseLayout>
