@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const talks = [
     {
         title: "Coz Speed Matters",
-        description: "The talk focuses on the critical role of website performance in the modern digital landscape.",
+        description: "A deep dive into why website speed is a non-negotiable in today's digital world — and exactly what you can do about it in WordPress.",
         type: "Talk / Optimization",
         thumbnail: "https://videos.files.wordpress.com/RDX0xriJ/video-59ec50136c_scruberthumbnail_0.jpg",
         video_url: "https://wordpress.tv/2015/03/10/sakar-upadhyaya-khatiwada-because-website-speed-matters/",
@@ -12,7 +12,7 @@ const talks = [
     },
     {
         title: "Accessible WordPress(ing)",
-        description: "The talk focuses on the importance of web accessibility and how to make WordPress websites more accessible to all users.",
+        description: "An eye-opening look at web accessibility and practical steps to make your WordPress site welcoming and usable for everyone, regardless of ability.",
         type: "Talk / Accessibility",
         thumbnail: "https://videos.files.wordpress.com/ZxhTd5hN/video-ad805490ad_scruberthumbnail_0.jpg",
         video_url: "https://wordpress.tv/2015/12/30/sakar-upadhyaya-khatiwada-accessible-wordpressing/",
@@ -20,21 +20,21 @@ const talks = [
     },
     {
         title: "Soft skill toppings for spicing up your WordPress professionalism",
-        description: "This session aims to highlight the importance of soft skills that can help us shine as a WordPress professional in the professional realm, emphasizing professionalism over just technical proficiency. Whether you're a developer, designer, content creator, or any other kind of professional in the WordPress space, enhancing your soft skills can significantly boost your career prospects and effectiveness.",
+        description: "Technical skills get you in the room — soft skills keep you there. This session explores the communication, collaboration, and professional habits that set great WordPress professionals apart from the rest.",
         type: "Talk / Soft Skills",
         thumbnail: "https://videos.files.wordpress.com/81YlrOoV/video-888f1944a4_scruberthumbnail_1.jpg",
         video_url: "https://wordpress.tv/2018/05/05/sakar-upadhyaya-khatiwada-soft-skill-toppings-for-spicing-up-your-wordpress-professionalism/",
     },
     {
         title: "Thinking the React Way for WordPress Developers",
-        description: "Talk focuses on developing the mental model to understand react to be used in building Blocks and FSE components  as a PHP Developer",
+        description: "A PHP developer's guide to thinking in React — building the mental models needed to confidently create Gutenberg Blocks and Full Site Editing components.",
         type: "Talk / React & WordPress",
         thumbnail: "https://videos.files.wordpress.com/T8GpaCak/video-28354b5f96_mp4.scrubthumb.jpg",
         video_url: "https://wordpress.tv/2022/10/01/thinking-the-react-way-for-wordpress-developers/",
     },
     {
         title: "Dissecting WordPress Playground",
-        description: "Showcases features and usecases of WordPress Playground.",
+        description: "A lightning-fast exploration of WordPress Playground — what it is, what you can build with it, and why every WordPress developer should be paying attention.",
         type: "Lightning Talk",
         thumbnail: "https://videos.files.wordpress.com/FVjSjW6V/video-4d756dc6b9_mp4.scrubthumb.jpg",
         video_url: "https://wordpress.tv/2025/04/30/dissecting-wordpress-playground/",
@@ -44,7 +44,7 @@ const talks = [
 const communityContributions = [
     {
         title: "Web Weekend Kathmandu",
-        description: "Part of the organizing team for Tech Kura Kani, AI Conf 2026, and BarCamp Kathmandu 2024 & 2025 editions, actively fostering the local tech community.",
+        description: "Part of the organizing team behind Tech Kura Kani, AI Conf 2026, and BarCamp Kathmandu 2024 & 2025 — events designed to spark conversations, build connections, and grow the local tech community.",
         icon: "groups",
         colorClass: "tertiary",
         link: {
@@ -54,7 +54,7 @@ const communityContributions = [
     },
     {
         title: "WordCamp Speaker",
-        description: "Bringing Web Concepts and joining it with Wordpress Ecosystem. The  talks that helps people to understand the WordPress ecosystem better.",
+        description: "Bridging core web concepts with the WordPress ecosystem through talks that make complex ideas approachable — from performance and accessibility to React and the Block Editor.",
         icon: "record_voice_over",
         colorClass: "tertiary",
         link: {
@@ -64,13 +64,13 @@ const communityContributions = [
     },
     {
         title: "Community Supporter",
-        description: "Part of developer communities in Kathmandu and Online. Attending events and learning from others and sharing my knowledge and experience. Previous organizer of PHP Developers Meetup and Shopify Meetup in Nepal.",
+        description: "Deeply embedded in developer communities both in Kathmandu and online — always attending, always learning, always sharing. Previously organized the PHP Developers Meetup and Shopify Meetup in Nepal.",
         icon: "hub",
         colorClass: "tertiary",
     },
     {
         title: "Open Source Contributor",
-        description: "Actively developing and maintaining open-source repositories and tools under the SaaSPal.",
+        description: "Actively developing and maintaining open-source tools and repositories under SaaSPal, contributing back to the ecosystem that has given so much.",
         icon: "code",
         colorClass: "tertiary",
         link: {
@@ -81,24 +81,36 @@ const communityContributions = [
 ];
 ---
 
-<BaseLayout title="Community & Talks | Sakar Upadhyaya Khatiwada">
+<BaseLayout 
+    title="Community & Public Speaking | Sakar Upadhyaya Khatiwada"
+    description="Sakar Upadhyaya Khatiwada is a tech community builder in Nepal — co-organizer of AI Conf 2026, BarCamp Kathmandu, and Web Weekend Kathmandu, and a WordCamp speaker with talks on WordPress performance, accessibility, React, and more."
+>
     <main class="pt-24 pb-20 max-w-7xl mx-auto px-8">
         <!-- Hero Section -->
-        <header class="py-20 lg:py-32 flex flex-col items-start gsap-reveal">
-            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-xs uppercase tracking-widest mb-6">
-                Community & Speaking
+        <section class="max-w-7xl mx-auto mb-32 gsap-reveal pt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">Community Builder & Tech Speaker</span>
+                    <h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-8">
+                        Fostering <span class="text-primary italic">Community & Knowledge</span>
+                    </h1>
+                    <p class="font-body text-xl text-on-surface-variant leading-relaxed max-w-2xl">
+                        Engineering is my craft, but community is my passion. From co-organizing <span class="text-primary font-bold">AI Conf 2026</span> and <span class="text-primary font-bold">BarCamp Kathmandu</span> to speaking on stages at <span class="text-primary font-bold">WordCamps</span>, I'm committed to growing the <span class="text-primary font-semibold">Nepali tech ecosystem</span> — one event, one talk, and one connection at a time.
+                    </p>
+                </div>
+                <div class="lg:col-span-5 relative group">
+                    <img 
+                        alt="Sakar Upadhyaya Khatiwada Speaking at a Tech Event" 
+                        class="relative w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl" 
+                        src="/images/speaker.jpg"
+                    />
+                </div>
             </div>
-            <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-8">
-                Community & Talks
-            </h1>
-            <p class="text-xl md:text-2xl text-on-surface-variant max-w-3xl font-body leading-relaxed">
-                Fostering the local tech community and sharing engineering insights on distributed systems, high-scale integrations, and the future of SaaS architecture at global stages.
-            </p>
-        </header>
+        </section>
 
         <!-- Community Contributions Section -->
         <section class="mb-32 gsap-reveal">
-            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12">Community Involvement</h2>
+            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12">Community Leadership</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {communityContributions.map((item) => (
                     <div class={`bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-${item.colorClass}/20 transition-all duration-300 shadow-xl shadow-${item.colorClass}/5 hover:-translate-y-1 flex flex-col`}>
@@ -122,13 +134,22 @@ const communityContributions = [
 
         <!-- Talks List Section -->
         <section class="mb-32">
-            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12 gsap-reveal">Talks</h2>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 gsap-reveal">
+                <div>
+                    <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">Public Speaking</span>
+                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface">Technical Talks</h2>
+                </div>
+                <p class="text-on-surface-variant max-w-md text-lg">
+                    Sharing knowledge across stages — making tech more accessible, one room at a time.
+                </p>
+            </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {talks.map((talk: any) => (
-                    <article class="group gsap-reveal">
+                    <article class="group gsap-reveal bg-surface-container-low p-8 rounded-3xl border border-transparent hover:border-primary/20 transition-all duration-300 shadow-xl shadow-primary/5 hover:-translate-y-1 flex flex-col h-full">
                         <!-- Image/Thumbnail area -->
-                        <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500 block">
-                            <a href={talk.v} class="absolute inset-0 z-10"></a>
+                        <div class="aspect-video bg-surface-container-high rounded-2xl mb-8 overflow-hidden relative block">
+                            <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10"></a>
                             <img 
                                 src={talk.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
                                 alt={talk.title} 
@@ -137,18 +158,18 @@ const communityContributions = [
                             <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-0"></div>
                         </div>
                         
-                        <div class="px-4">
+                        <div class="flex flex-col flex-1">
                             <div class="flex items-center gap-3 mb-3">
                                 <span class="font-label text-xs font-bold text-primary block uppercase tracking-widest">{talk.type || "Talk"}</span>
                                 <span class="h-px w-4 bg-outline-variant"></span>
                             </div>
-                            <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                                <a href={talk.customUrl} class="relative z-10">{talk.title}</a>
-                            </h2>
-                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                            <h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                                <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="relative z-10">{talk.title}</a>
+                            </h3>
+                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6 flex-1">
                                 {talk.description}
                             </p>
-                            <div class="flex flex-wrap gap-4 relative z-10">
+                            <div class="flex flex-wrap gap-4 relative z-10 mt-auto">
                                 {talk.video_url && (
                                     <a href={talk.video_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm hover:underline">
                                         <span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
@@ -175,14 +196,15 @@ const communityContributions = [
                 <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-black/10 rounded-full blur-3xl"></div>
                 
                 <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-headline font-black text-on-primary mb-8 tracking-tighter">
-                        Invite Me to Speak
+                    <span class="font-label text-sm uppercase tracking-widest text-on-primary/70 font-bold mb-6 block">Open to Collaboration</span>
+                    <h2 class="text-4xl md:text-6xl font-headline font-black text-on-primary mb-8">
+                        Speaker. Organizer. Collaborator.
                     </h2>
                     <p class="text-xl md:text-2xl text-on-primary/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
-                        Looking for a speaker to discuss SaaS engineering, platform integrations, or technical community building?
+                        Whether you need a speaker for your next event, a co-organizer for a community initiative, or just someone to bounce ideas off — I'm always happy to connect and build something together.
                     </p>
-                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-4 bg-surface-container-lowest text-primary px-10 py-5 rounded-full font-headline font-black text-xl hover:scale-105 active:scale-95 transition-transform">
-                        Send an Invite
+                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-4 bg-surface-container-lowest text-primary px-10 py-5 rounded-full font-headline font-black text-xl hover:scale-105 active:scale-95 transition-transform shadow-xl">
+                        Let's Connect
                         <span class="material-symbols-outlined font-bold" data-icon="mail">mail</span>
                     </a>
                 </div>
@@ -190,3 +212,4 @@ const communityContributions = [
         </section>
     </main>
 </BaseLayout>
+
