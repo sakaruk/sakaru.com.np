@@ -3,6 +3,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const currentYear = new Date().getFullYear();
 const experienceYears = currentYear - 2013;
+
+const skillCategories = [
+    {
+        title: "Core Languages",
+        icon: "code",
+        colorClass: "text-primary",
+        tagVariant: "skill-tag--primary",
+        skills: ["HTML", "CSS", "PHP", "JavaScript", "TypeScript", "JSON", "Python"]
+    },
+    {
+        title: "Frameworks & CMS",
+        icon: "layers",
+        colorClass: "text-tertiary",
+        tagVariant: "skill-tag--tertiary",
+        skills: ["WordPress (Plugin/Theme)", "SmartJobBoard", "CakePHP 2 & 3", "CodeIgniter 2", "Laravel 5 & 7", "jQuery", "Node.js", "React", "Next.js", "Remix", "Astro", "Tailwind CSS", "Bootstrap"]
+    },
+    {
+        title: "Databases",
+        icon: "database",
+        colorClass: "text-secondary",
+        tagVariant: "skill-tag--secondary",
+        skills: ["MySQL", "SQLite", "Firestore", "DynamoDB", "PostgreSQL", "Supabase", "Appwrite"]
+    },
+    {
+        title: "Zendesk Expertise",
+        icon: "support_agent",
+        colorClass: "text-green-400",
+        tagVariant: "skill-tag--green",
+        skills: ["Implementation", "Support Applications", "Theming", "Automations", "Trainings", "AI Agents"]
+    },
+    {
+        title: "Infrastructure & DevOps",
+        icon: "cloud",
+        colorClass: "text-amber-400",
+        tagVariant: "skill-tag--amber",
+        skills: ["Git / GitHub / Bitbucket", "SSH", "Linux Terminal", "DirectAdmin", "cPanel", "Redis", "Apache", "AWS Lambda", "AWS DynamoDB", "AWS CloudWatch", "Google App Engine", "Cloud SQL", "Cloudflare Pages", "Cloudflare Workers", "Netlify", "Vercel", "Fly.io", "GitHub Actions"]
+    },
+    {
+        title: "Platforms & Specializations",
+        icon: "shopping_bag",
+        colorClass: "text-pink-400",
+        tagVariant: "skill-tag--pink",
+        skills: ["Chrome Extension Dev", "Shopify App Development", "Shopify Theme Customization"]
+    },
+    {
+        title: "Management & Process",
+        icon: "groups",
+        colorClass: "text-slate-400",
+        tagVariant: "skill-tag--slate",
+        skills: ["Email / Slack", "Trello", "Jira", "ClickUp", "Requirements Analysis", "Agile Scrum", "Kanban", "Digitization Consulting"]
+    }
+];
 ---
 
 <BaseLayout 
@@ -62,7 +114,7 @@ const experienceYears = currentYear - 2013;
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
                                     <div>
                                         <h3 class="font-headline text-2xl font-bold text-on-surface">Consultant / Development</h3>
-                                        <p class="font-label text-base text-primary font-bold mt-1">Freelance</p>
+                                        <p class="font-label text-base text-primary font-bold mt-1">Freelance | MultiplAI | SaaSPal</p>
                                     </div>
                                     <span class="font-label text-on-surface-variant font-bold text-xs bg-surface-container-highest px-4 py-2 rounded-full uppercase tracking-wider self-start sm:self-auto border border-surface-container-highest">JUNE 2019 — PRESENT</span>
                                 </div>
@@ -238,8 +290,8 @@ const experienceYears = currentYear - 2013;
                         <li class="flex items-start gap-3">
                             <span class="material-symbols-outlined text-primary mt-1">groups</span>
                             <div>
-                                <h4 class="font-bold text-on-surface">BarCamp Kathmandu</h4>
-                                <p class="text-sm">Lead Organizer for 2024 & 2025 editions, fostering the local tech community.</p>
+                                <h4 class="font-bold text-on-surface">Web Weekend Kathmandu Organizing Team</h4>
+                                <p class="text-sm">Part of the organizing team for Tech Kura Kani, AI Conf 2026, BarCamp Kathmandu 2024 & 2025 editions, fostering the local tech community.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
@@ -253,10 +305,16 @@ const experienceYears = currentYear - 2013;
                             <span class="material-symbols-outlined text-primary mt-1">hub</span>
                             <div>
                                 <h4 class="font-bold text-on-surface">Zendesk Community</h4>
-                                <p class="text-sm">Active contributor in official Slack channels and developer forums.</p>
+                                <p class="text-sm">Active contributor in official Slack channels, Reddit and Zendesk Community.</p>
                             </div>
                         </li>
                     </ul>
+                    <div class="mt-8 pt-6 border-t border-surface-container-highest">
+                        <a href="/community" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm uppercase tracking-widest hover:text-primary-variant transition-colors group">
+                            Explore Community & Talks 
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -327,8 +385,8 @@ const experienceYears = currentYear - 2013;
                     <div class="mb-10">
                         <div class="flex flex-wrap gap-3 mb-8">
                             <span class="skill-tag skill-tag--primary">JavaScript / TypeScript</span>
-                            <span class="skill-tag skill-tag--tertiary">React & Next.js</span>
-                            <span class="skill-tag skill-tag--secondary">PHP / Laravel</span>
+                            <span class="skill-tag skill-tag--tertiary">React / Next / Remix / Astro</span>
+                            <span class="skill-tag skill-tag--secondary">PHP / Laravel / Node.js</span>
                             <span class="skill-tag skill-tag--green">Zendesk Apps & API</span>
                             <span class="skill-tag skill-tag--amber">AWS & Cloud Infrastructure</span>
                             <span class="skill-tag skill-tag--pink">Shopify Development</span>
@@ -342,105 +400,20 @@ const experienceYears = currentYear - 2013;
 
                     <!-- Skill Categories Grid (Hidden by default) -->
                     <div id="arsenal-list" class="space-y-10 pt-8 border-t border-white/10 hidden">
-
-                        <!-- Core Languages -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary text-xl" data-icon="code">code</span>
-                                <h3 class="font-label text-xs font-bold text-primary uppercase tracking-widest">Core Languages</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
+                        {skillCategories.map((category) => (
+                            <div class="skill-row group">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class={`material-symbols-outlined ${category.colorClass} text-xl`} data-icon={category.icon}>{category.icon}</span>
+                                    <h3 class={`font-label text-xs font-bold ${category.colorClass} uppercase tracking-widest`}>{category.title}</h3>
+                                    <div class="flex-1 h-px bg-slate-700"></div>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    {category.skills.map(skill => (
+                                        <span class={`skill-tag ${category.tagVariant}`}>{skill}</span>
+                                    ))}
+                                </div>
                             </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["HTML", "CSS", "PHP", "JavaScript", "TypeScript", "JSON", "Python"].map(skill => (
-                                    <span class="skill-tag skill-tag--primary">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <!-- Frameworks & CMS -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-tertiary text-xl" data-icon="layers">layers</span>
-                                <h3 class="font-label text-xs font-bold text-tertiary uppercase tracking-widest">Frameworks & CMS</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["WordPress (Plugin/Theme)", "SmartJobBoard", "CakePHP 2 & 3", "CodeIgniter 2", "Laravel 5 & 7", "jQuery", "Node.js", "React", "Next.js", "Remix"].map(skill => (
-                                    <span class="skill-tag skill-tag--tertiary">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <!-- Databases -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-secondary text-xl" data-icon="database">database</span>
-                                <h3 class="font-label text-xs font-bold text-secondary uppercase tracking-widest">Databases</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["MySQL", "SQLite", "Firestore", "DynamoDB", "PostgreSQL", "Supabase", "Appwrite"].map(skill => (
-                                    <span class="skill-tag skill-tag--secondary">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <!-- Zendesk -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-green-400 text-xl" data-icon="support_agent">support_agent</span>
-                                <h3 class="font-label text-xs font-bold text-green-400 uppercase tracking-widest">Zendesk Expertise</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["Implementation", "Support Applications", "Theming", "Automations", "Trainings", "AI Agents"].map(skill => (
-                                    <span class="skill-tag skill-tag--green">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <!-- Infrastructure & DevOps -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-amber-400 text-xl" data-icon="cloud">cloud</span>
-                                <h3 class="font-label text-xs font-bold text-amber-400 uppercase tracking-widest">Infrastructure & DevOps</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["Git / GitHub / Bitbucket", "SSH", "Linux Terminal", "DirectAdmin", "cPanel", "Redis", "Apache", "AWS Lambda", "AWS DynamoDB", "AWS CloudWatch", "Google App Engine", "Cloud SQL", "Cloudflare Pages", "Cloudflare Workers", "Netlify", "Vercel", "Fly.io", "GitHub Actions"].map(skill => (
-                                    <span class="skill-tag skill-tag--amber">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <!-- Platforms & Specializations -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-pink-400 text-xl" data-icon="shopping_bag">shopping_bag</span>
-                                <h3 class="font-label text-xs font-bold text-pink-400 uppercase tracking-widest">Platforms & Specializations</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["Chrome Extension Dev", "Shopify App Development", "Shopify Theme Customization"].map(skill => (
-                                    <span class="skill-tag skill-tag--pink">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <!-- Management & Process -->
-                        <div class="skill-row group">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-slate-400 text-xl" data-icon="groups">groups</span>
-                                <h3 class="font-label text-xs font-bold text-slate-400 uppercase tracking-widest">Management & Process</h3>
-                                <div class="flex-1 h-px bg-slate-700"></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                {["Email / Slack", "Trello", "Jira", "ClickUp", "Requirements Analysis", "Agile Scrum", "Kanban", "Digitization Consulting"].map(skill => (
-                                    <span class="skill-tag skill-tag--slate">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-
+                        ))}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const talks = import.meta.glob('../../../data/talks/*.md', { eager: true });
+const sortedTalks = Object.values(talks).map((p: any) => ({
+    ...p,
+    customUrl: '/community/' + p.file.split('/').pop().replace('.md', '')
+})).sort((a: any, b: any) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+---
+
+<BaseLayout title="Community & Talks | Sakar Upadhyaya Khatiwada">
+    <main class="pt-24 pb-20 max-w-7xl mx-auto px-8">
+        <!-- Hero Section -->
+        <header class="py-20 lg:py-32 flex flex-col items-start gsap-reveal">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-xs uppercase tracking-widest mb-6">
+                Community & Speaking
+            </div>
+            <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-8">
+                Community & Talks
+            </h1>
+            <p class="text-xl md:text-2xl text-on-surface-variant max-w-3xl font-body leading-relaxed">
+                Fostering the local tech community and sharing engineering insights on distributed systems, high-scale integrations, and the future of SaaS architecture at global stages.
+            </p>
+        </header>
+
+        <!-- Community Contributions Section -->
+        <section class="mb-32 gsap-reveal">
+            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12">Community Leadership</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- WWK / Barcamp -->
+                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-primary/20 transition-all duration-300 shadow-xl shadow-primary/5 hover:-translate-y-1 flex flex-col">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-primary" data-icon="groups">groups</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Web Weekend Kathmandu</h3>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Part of the organizing team for Tech Kura Kani, AI Conf 2026, and BarCamp Kathmandu 2024 & 2025 editions, actively fostering the local tech community.
+                    </p>
+                </div>
+
+                <!-- WordCamp -->
+                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-tertiary/20 transition-all duration-300 shadow-xl shadow-tertiary/5 hover:-translate-y-1 flex flex-col">
+                    <div class="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-tertiary" data-icon="record_voice_over">record_voice_over</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">WordCamp Speaker</h3>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Regular speaker on SaaS integrations and Shopify engineering at official WordPress events, sharing architectural approaches with the ecosystem.
+                    </p>
+                </div>
+
+                <!-- Zendesk -->
+                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-secondary/20 transition-all duration-300 shadow-xl shadow-secondary/5 hover:-translate-y-1 flex flex-col">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-secondary" data-icon="hub">hub</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Zendesk Community</h3>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Active contributor in official Slack channels, Reddit, and the Zendesk Community forums, guiding developers and admins on complex workflows.
+                    </p>
+                </div>
+
+                <!-- Open Source -->
+                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-slate-500/20 transition-all duration-300 shadow-xl shadow-slate-500/5 hover:-translate-y-1 flex flex-col">
+                    <div class="w-16 h-16 bg-slate-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-slate-500" data-icon="code">code</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Open Source Contributor</h3>
+                    <p class="text-on-surface-variant leading-relaxed mb-6 flex-1">
+                        Actively developing and maintaining open-source repositories and tools under the SaaSPal organization.
+                    </p>
+                    <a href="https://github.com/saaspal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm uppercase tracking-widest hover:text-primary-variant transition-colors group mt-auto">
+                        View GitHub Profile
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="open_in_new">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talks List Section -->
+        <section class="mb-32">
+            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12 gsap-reveal">Featured Talks</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {sortedTalks.map((talk: any) => (
+                    <article class="group gsap-reveal">
+                        <!-- Image/Thumbnail area -->
+                        <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500 block">
+                            <a href={talk.customUrl} class="absolute inset-0 z-10"></a>
+                            <img 
+                                src={talk.frontmatter.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
+                                alt={talk.frontmatter.title} 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-0" 
+                            />
+                            <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-0"></div>
+                        </div>
+                        
+                        <div class="px-4">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="font-label text-xs font-bold text-primary block uppercase tracking-widest">{talk.frontmatter.type || "Talk"}</span>
+                                <span class="h-px w-4 bg-outline-variant"></span>
+                                <span class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest">{talk.frontmatter.date}</span>
+                            </div>
+                            <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                                <a href={talk.customUrl} class="relative z-10">{talk.frontmatter.title}</a>
+                            </h2>
+                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                                {talk.frontmatter.description}
+                            </p>
+                            <div class="flex flex-wrap gap-4 relative z-10">
+                                {talk.frontmatter.video_url && (
+                                    <a href={talk.frontmatter.video_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm hover:underline">
+                                        <span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
+                                        Watch Video
+                                    </a>
+                                )}
+                                {talk.frontmatter.slides_url && (
+                                    <a href={talk.frontmatter.slides_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-on-surface-variant font-label font-bold text-sm hover:text-on-surface hover:underline transition-colors">
+                                        <span class="material-symbols-outlined text-lg" data-icon="auto_stories">auto_stories</span>
+                                        Slides
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="mt-32 gsap-reveal">
+            <div class="bg-gradient-to-br from-primary to-tertiary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-black/10 rounded-full blur-3xl"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-6xl font-headline font-black text-on-primary mb-8 tracking-tighter">
+                        Invite Me to Speak
+                    </h2>
+                    <p class="text-xl md:text-2xl text-on-primary/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
+                        Looking for a speaker to discuss SaaS engineering, platform integrations, or technical community building?
+                    </p>
+                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-4 bg-surface-container-lowest text-primary px-10 py-5 rounded-full font-headline font-black text-xl hover:scale-105 active:scale-95 transition-transform">
+                        Send an Invite
+                        <span class="material-symbols-outlined font-bold" data-icon="mail">mail</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
