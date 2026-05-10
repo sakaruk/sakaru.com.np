@@ -1,11 +1,84 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const talks = import.meta.glob('../../../data/talks/*.md', { eager: true });
-const sortedTalks = Object.values(talks).map((p: any) => ({
-    ...p,
-    customUrl: '/community/' + p.file.split('/').pop().replace('.md', '')
-})).sort((a: any, b: any) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+const talks = [
+    {
+        title: "Coz Speed Matters",
+        description: "The talk focuses on the critical role of website performance in the modern digital landscape.",
+        type: "Talk / Optimization",
+        thumbnail: "https://videos.files.wordpress.com/RDX0xriJ/video-59ec50136c_scruberthumbnail_0.jpg",
+        video_url: "https://wordpress.tv/2015/03/10/sakar-upadhyaya-khatiwada-because-website-speed-matters/",
+        slides_url: "https://www.slideshare.net/slideshow/coz-speed-matters-wordpress-optimization/41890594"
+    },
+    {
+        title: "Accessible WordPress(ing)",
+        description: "The talk focuses on the importance of web accessibility and how to make WordPress websites more accessible to all users.",
+        type: "Talk / Accessibility",
+        thumbnail: "https://videos.files.wordpress.com/ZxhTd5hN/video-ad805490ad_scruberthumbnail_0.jpg",
+        video_url: "https://wordpress.tv/2015/12/30/sakar-upadhyaya-khatiwada-accessible-wordpressing/",
+        slides_url: "https://www.slideshare.net/slideshow/accessible-wordpressing/55362625"
+    },
+    {
+        title: "Soft skill toppings for spicing up your WordPress professionalism",
+        description: "This session aims to highlight the importance of soft skills that can help us shine as a WordPress professional in the professional realm, emphasizing professionalism over just technical proficiency. Whether you're a developer, designer, content creator, or any other kind of professional in the WordPress space, enhancing your soft skills can significantly boost your career prospects and effectiveness.",
+        type: "Talk / Soft Skills",
+        thumbnail: "https://videos.files.wordpress.com/81YlrOoV/video-888f1944a4_scruberthumbnail_1.jpg",
+        video_url: "https://wordpress.tv/2018/05/05/sakar-upadhyaya-khatiwada-soft-skill-toppings-for-spicing-up-your-wordpress-professionalism/",
+    },
+    {
+        title: "Thinking the React Way for WordPress Developers",
+        description: "Talk focuses on developing the mental model to understand react to be used in building Blocks and FSE components  as a PHP Developer",
+        type: "Talk / React & WordPress",
+        thumbnail: "https://videos.files.wordpress.com/T8GpaCak/video-28354b5f96_mp4.scrubthumb.jpg",
+        video_url: "https://wordpress.tv/2022/10/01/thinking-the-react-way-for-wordpress-developers/",
+    },
+    {
+        title: "Dissecting WordPress Playground",
+        description: "Showcases features and usecases of WordPress Playground.",
+        type: "Lightning Talk",
+        thumbnail: "https://videos.files.wordpress.com/FVjSjW6V/video-4d756dc6b9_mp4.scrubthumb.jpg",
+        video_url: "https://wordpress.tv/2025/04/30/dissecting-wordpress-playground/",
+    }
+];
+
+const communityContributions = [
+    {
+        title: "Web Weekend Kathmandu",
+        description: "Part of the organizing team for Tech Kura Kani, AI Conf 2026, and BarCamp Kathmandu 2024 & 2025 editions, actively fostering the local tech community.",
+        icon: "groups",
+        colorClass: "tertiary",
+        link: {
+            url: "https://community.wwktm.com/",
+            label: "Join The Community"
+        }
+    },
+    {
+        title: "WordCamp Speaker",
+        description: "Bringing Web Concepts and joining it with Wordpress Ecosystem. The  talks that helps people to understand the WordPress ecosystem better.",
+        icon: "record_voice_over",
+        colorClass: "tertiary",
+        link: {
+            url: "https://wordpress.tv/speakers/sakar-upadhyaya-khatiwada/",
+            label: "Watch Videos"
+        }
+    },
+    {
+        title: "Community Supporter",
+        description: "Part of developer communities in Kathmandu and Online. Attending events and learning from others and sharing my knowledge and experience. Previous organizer of PHP Developers Meetup and Shopify Meetup in Nepal.",
+        icon: "hub",
+        colorClass: "tertiary",
+    },
+    {
+        title: "Open Source Contributor",
+        description: "Actively developing and maintaining open-source repositories and tools under the SaaSPal.",
+        icon: "code",
+        colorClass: "tertiary",
+        link: {
+            url: "https://github.com/saaspal",
+            label: "View GitHub Profile"
+        }
+    }
+];
 ---
 
 <BaseLayout title="Community & Talks | Sakar Upadhyaya Khatiwada">
@@ -25,70 +98,40 @@ const sortedTalks = Object.values(talks).map((p: any) => ({
 
         <!-- Community Contributions Section -->
         <section class="mb-32 gsap-reveal">
-            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12">Community Leadership</h2>
+            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12">Community Involvement</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- WWK / Barcamp -->
-                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-primary/20 transition-all duration-300 shadow-xl shadow-primary/5 hover:-translate-y-1 flex flex-col">
-                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-3xl text-primary" data-icon="groups">groups</span>
+                {communityContributions.map((item) => (
+                    <div class={`bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-${item.colorClass}/20 transition-all duration-300 shadow-xl shadow-${item.colorClass}/5 hover:-translate-y-1 flex flex-col`}>
+                        <div class={`w-16 h-16 bg-${item.colorClass}/10 rounded-2xl flex items-center justify-center mb-6`}>
+                            <span class={`material-symbols-outlined text-3xl text-${item.colorClass}`} data-icon={item.icon}>{item.icon}</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">{item.title}</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-6 flex-1">
+                            {item.description}
+                        </p>
+                        {item.link && (
+                            <a href={item.link.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm uppercase tracking-widest hover:text-primary-variant transition-colors group mt-auto">
+                                {item.link.label}
+                                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="open_in_new">open_in_new</span>
+                            </a>
+                        )}
                     </div>
-                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Web Weekend Kathmandu</h3>
-                    <p class="text-on-surface-variant leading-relaxed">
-                        Part of the organizing team for Tech Kura Kani, AI Conf 2026, and BarCamp Kathmandu 2024 & 2025 editions, actively fostering the local tech community.
-                    </p>
-                </div>
-
-                <!-- WordCamp -->
-                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-tertiary/20 transition-all duration-300 shadow-xl shadow-tertiary/5 hover:-translate-y-1 flex flex-col">
-                    <div class="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-3xl text-tertiary" data-icon="record_voice_over">record_voice_over</span>
-                    </div>
-                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">WordCamp Speaker</h3>
-                    <p class="text-on-surface-variant leading-relaxed">
-                        Regular speaker on SaaS integrations and Shopify engineering at official WordPress events, sharing architectural approaches with the ecosystem.
-                    </p>
-                </div>
-
-                <!-- Zendesk -->
-                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-secondary/20 transition-all duration-300 shadow-xl shadow-secondary/5 hover:-translate-y-1 flex flex-col">
-                    <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-3xl text-secondary" data-icon="hub">hub</span>
-                    </div>
-                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Zendesk Community</h3>
-                    <p class="text-on-surface-variant leading-relaxed">
-                        Active contributor in official Slack channels, Reddit, and the Zendesk Community forums, guiding developers and admins on complex workflows.
-                    </p>
-                </div>
-
-                <!-- Open Source -->
-                <div class="bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-slate-500/20 transition-all duration-300 shadow-xl shadow-slate-500/5 hover:-translate-y-1 flex flex-col">
-                    <div class="w-16 h-16 bg-slate-500/10 rounded-2xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-3xl text-slate-500" data-icon="code">code</span>
-                    </div>
-                    <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Open Source Contributor</h3>
-                    <p class="text-on-surface-variant leading-relaxed mb-6 flex-1">
-                        Actively developing and maintaining open-source repositories and tools under the SaaSPal organization.
-                    </p>
-                    <a href="https://github.com/saaspal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm uppercase tracking-widest hover:text-primary-variant transition-colors group mt-auto">
-                        View GitHub Profile
-                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="open_in_new">open_in_new</span>
-                    </a>
-                </div>
+                ))}
             </div>
         </section>
 
         <!-- Talks List Section -->
         <section class="mb-32">
-            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12 gsap-reveal">Featured Talks</h2>
+            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12 gsap-reveal">Talks</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                {sortedTalks.map((talk: any) => (
+                {talks.map((talk: any) => (
                     <article class="group gsap-reveal">
                         <!-- Image/Thumbnail area -->
                         <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500 block">
-                            <a href={talk.customUrl} class="absolute inset-0 z-10"></a>
+                            <a href={talk.v} class="absolute inset-0 z-10"></a>
                             <img 
-                                src={talk.frontmatter.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
-                                alt={talk.frontmatter.title} 
+                                src={talk.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
+                                alt={talk.title} 
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-0" 
                             />
                             <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-0"></div>
@@ -96,25 +139,24 @@ const sortedTalks = Object.values(talks).map((p: any) => ({
                         
                         <div class="px-4">
                             <div class="flex items-center gap-3 mb-3">
-                                <span class="font-label text-xs font-bold text-primary block uppercase tracking-widest">{talk.frontmatter.type || "Talk"}</span>
+                                <span class="font-label text-xs font-bold text-primary block uppercase tracking-widest">{talk.type || "Talk"}</span>
                                 <span class="h-px w-4 bg-outline-variant"></span>
-                                <span class="font-label text-xs font-bold text-on-surface-variant uppercase tracking-widest">{talk.frontmatter.date}</span>
                             </div>
                             <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                                <a href={talk.customUrl} class="relative z-10">{talk.frontmatter.title}</a>
+                                <a href={talk.customUrl} class="relative z-10">{talk.title}</a>
                             </h2>
                             <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                                {talk.frontmatter.description}
+                                {talk.description}
                             </p>
                             <div class="flex flex-wrap gap-4 relative z-10">
-                                {talk.frontmatter.video_url && (
-                                    <a href={talk.frontmatter.video_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm hover:underline">
+                                {talk.video_url && (
+                                    <a href={talk.video_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm hover:underline">
                                         <span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
                                         Watch Video
                                     </a>
                                 )}
-                                {talk.frontmatter.slides_url && (
-                                    <a href={talk.frontmatter.slides_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-on-surface-variant font-label font-bold text-sm hover:text-on-surface hover:underline transition-colors">
+                                {talk.slides_url && (
+                                    <a href={talk.slides_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-on-surface-variant font-label font-bold text-sm hover:text-on-surface hover:underline transition-colors">
                                         <span class="material-symbols-outlined text-lg" data-icon="auto_stories">auto_stories</span>
                                         Slides
                                     </a>
