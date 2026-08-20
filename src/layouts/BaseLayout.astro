@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import '../styles/tailwind.css';
 
 export interface Props {
   title?: string;
@@ -12,6 +13,7 @@ export interface Props {
 const { title, description, image } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="en" class="light">
 <head>
 	<meta charset="utf-8"/>
@@ -20,68 +22,11 @@ const { title, description, image } = Astro.props;
     
     <SEO title={title} description={description} image={image} />
 
-	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" is:inline></script>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Space_Grotesk:wght@500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-	<script is:inline>
-	    tailwind.config = {
-		  darkMode: "class",
-		  theme: {
-			extend: {
-			  colors: {
-				"surface-container-high": "#e2e8f0",
-                "surface-container-low": "#f8fafc",
-                "background": "#f8fafc",
-                "inverse-surface": "#091b18",
-                "surface-container-highest": "#cbd5e1",
-                "tertiary-fixed": "#ecfdf5",
-                "on-secondary-container": "#134e4a",
-                "on-surface-variant": "#475569",
-                "on-primary-fixed": "#064e3b",
-                "tertiary-fixed-dim": "#a7f3d0",
-                "on-secondary": "#ffffff",
-                "on-primary": "#ffffff",
-                "surface-tint": "#008060",
-                "on-tertiary-fixed-variant": "#065f46",
-                "on-secondary-fixed": "#042f2e",
-                "outline-variant": "#f1f5f9",
-                "error-container": "#ffdad6",
-                "surface-variant": "#f1f5f9",
-                "secondary-fixed-dim": "#99f6e4",
-                "on-tertiary": "#ffffff",
-                "on-tertiary-container": "#ffffff",
-                "surface-dim": "#f1f5f9",
-                "on-error": "#ffffff",
-                "secondary-container": "#f0fdfa",
-                "on-primary-container": "#ffffff",
-                "primary-fixed-dim": "#a7f3d0",
-                "primary": "#008060",
-                "on-tertiary-fixed": "#064e3b",
-                "surface-bright": "#ffffff",
-                "on-primary-fixed-variant": "#004c3f",
-                "on-error-container": "#93000a",
-                "secondary": "#0f766e",
-                "tertiary-container": "#0d9488",
-                "on-surface": "#0f172a",
-                "on-background": "#0f172a",
-                "outline": "#e2e8f0",
-                "on-secondary-fixed-variant": "#115e59",
-                "inverse-primary": "#a7f3d0",
-                "tertiary": "#059669",
-                "surface": "#ffffff",
-                "error": "#ba1a1a",
-                "primary-container": "#008060",
-                "surface-container-lowest": "#ffffff",
-                "inverse-on-surface": "#ecfdf5",
-                "secondary-fixed": "#ccfbf1",
-                "primary-fixed": "#d1fae5",
-                "surface-container": "#f1f5f9"
-			  }
-			}
-		  }
-		}
-	</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" is:inline></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" is:inline></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Space_Grotesk:wght@500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+
 	<style>
 		:root {
 			--primary: #008060;
@@ -117,28 +62,39 @@ const { title, description, image } = Astro.props;
 
 	<Footer />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer is:inline></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer is:inline></script>
     <script is:inline>
-        // Global GSAP Initiation
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.registerPlugin(ScrollTrigger);
+        // Global GSAP Initiation - non-blocking after scripts load
+        function initGSAP() {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
 
-            const revealElements = document.querySelectorAll(".gsap-reveal");
-            revealElements.forEach((el) => {
-                gsap.fromTo(el, 
-                    { opacity: 0, y: 30 }, 
-                    { 
-                        opacity: 1, 
-                        y: 0, 
-                        duration: 0.8, 
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: el,
-                            start: "top 85%", // Triggers when the top of element hits 85% of viewport
+                const revealElements = document.querySelectorAll(".gsap-reveal");
+                revealElements.forEach((el) => {
+                    gsap.fromTo(el, 
+                        { opacity: 0, y: 30 }, 
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            duration: 0.8, 
+                            ease: "power2.out",
+                            scrollTrigger: {
+                                trigger: el,
+                                start: "top 85%", // Triggers when the top of element hits 85% of viewport
+                            }
                         }
-                    }
-                );
-            });
-        });
+                    );
+                });
+            } else {
+                setTimeout(initGSAP, 50);
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener("DOMContentLoaded", initGSAP);
+        } else {
+            initGSAP();
+        }
     </script>
 </body>
 </html>

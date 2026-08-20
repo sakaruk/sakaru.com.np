@@ -110,6 +110,11 @@ const communityContributions = [
                         alt="Sakar Upadhyaya Khatiwada Speaking at a Tech Event" 
                         class="relative w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl" 
                         src="/images/speaker.jpg"
+                        width="600"
+                        height="600"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
                     />
                 </div>
             </div>
@@ -160,6 +165,10 @@ const communityContributions = [
                             <img 
                                 src={talk.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
                                 alt={talk.title} 
+                                width="640"
+                                height="360"
+                                loading="lazy"
+                                decoding="async"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-0" 
                             />
                             <div class="absolute inset-0 bg-emerald-950/10 mix-blend-overlay z-0"></div>

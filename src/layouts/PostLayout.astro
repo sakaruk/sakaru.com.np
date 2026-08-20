@@ -50,7 +50,7 @@ const { content } = Astro.props;
             
             {content.thumbnail && (
                 <div class="w-full aspect-[21/9] overflow-hidden rounded-2xl mb-12 not-prose">
-                    <img src={content.thumbnail} alt={content.title} class="w-full h-full object-cover" />
+                    <img src={content.thumbnail} alt={content.title} class="w-full h-full object-cover" width="1200" height="514" loading="eager" fetchpriority="high" decoding="async" />
                 </div>
             )}
             

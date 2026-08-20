@@ -12,6 +12,7 @@
     "generate-types": "wrangler types"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
     "astro": "^7.2.4",
@@ -24,7 +25,8 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.5",
     "prettier": "^3.8.2",
-    "sass": "^1.99.0"
+    "sass": "^1.99.0",
+    "tailwindcss": "^4.3.3"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3"
