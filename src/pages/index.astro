@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
 
 const currentYear = new Date().getFullYear();
 const experienceYears = currentYear - 2013;
@@ -218,19 +219,9 @@ const experienceYears = currentYear - 2013;
         </section>
 
         <!-- Final CTA -->
-        <section class="py-28 bg-white dark:bg-slate-900 text-center px-8 border-t border-slate-200/80 dark:border-slate-800">
-            <h2 class="text-5xl md:text-6xl font-headline font-black text-slate-900 dark:text-white mb-8 tracking-tight">
-                Let's Build <br/> <span class="text-emerald-700 dark:text-emerald-400 italic">Something Remarkable.</span>
-            </h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-5">
-                <a class="w-full md:w-auto bg-emerald-600 text-white px-10 py-4.5 rounded-full font-headline font-bold text-lg hover:bg-emerald-700 hover:scale-105 transition-all shadow-xl shadow-emerald-600/20" href="mailto:sakar@saaspal.us">
-                    Start a Consultation
-                </a>
-                <a class="w-full md:w-auto flex items-center justify-center gap-2 px-10 py-4.5 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-headline font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="/about">
-                    View My Profile
-                </a>
-            </div>
-        </section>
+        <div class="px-8 max-w-7xl mx-auto my-16">
+            <CTA />
+        </div>
 	</main>
 
     <style>

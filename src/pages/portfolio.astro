@@ -1,0 +1,349 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+
+interface Project {
+    id: string;
+    title: string;
+    badge: string;
+    description: string;
+    categories: ('zendesk' | 'shopify' | 'integrations' | 'ai' | 'webapp')[];
+    tags: string[];
+    accent: 'emerald' | 'teal';
+    url?: string;
+    urlText?: string;
+}
+
+const filterCategories = [
+    { id: 'all', label: 'All Projects' },
+    { id: 'zendesk', label: 'Zendesk Apps' },
+    { id: 'webapp', label: 'Web Applications' },
+    { id: 'shopify', label: 'Shopify & E-Commerce' },
+    { id: 'integrations', label: 'Integrations & APIs' },
+    { id: 'ai', label: 'AI & Automation' }
+];
+
+const projects: Project[] = [
+    {
+        id: 'prompter-ai',
+        title: 'Prompter AI',
+        badge: 'Zendesk Marketplace App',
+        description: 'An app that uses ticket data to generate relevant responses using user-defined prompts and LLMs.',
+        categories: ['zendesk', 'ai'],
+        tags: ['TypeScript', 'React', 'Zendesk Garden', 'ZAF Client', 'Ollama Cloud', 'Open Router'],
+        accent: 'teal',
+        url: 'https://www.zendesk.com/marketplace/apps/support/1274834/prompter-ai/',
+        urlText: 'View on Zendesk Marketplace'
+    },
+    {
+        id: 'stylo-assist',
+        title: 'Stylo Assist AI',
+        badge: 'Zendesk App Frontend',
+        description: 'An AI-driven assistant for Zendesk. Worked on frontend of the app.',
+        categories: ['zendesk', 'ai'],
+        tags: ['TypeScript', 'React', 'Zendesk Garden', 'ZAF Client'],
+        accent: 'emerald',
+        url: 'https://www.zendesk.com/marketplace/apps/support/849231/stylo-assist/',
+        urlText: 'View on Zendesk Marketplace'
+    },
+    {
+        id: 'clicksend',
+        title: 'ClickSend SMS for Zendesk',
+        badge: 'SMS & Communications Integration',
+        description: 'A custom Zendesk app allowing agents to send and receive SMS directly within tickets via the ClickSend API.',
+        categories: ['zendesk', 'integrations'],
+        tags: ['TypeScript', 'React', 'Zendesk Garden', 'ZAF Client', 'REST API'],
+        accent: 'teal',
+        url: 'https://www.zendesk.com/marketplace/apps/support/1067570/',
+        urlText: 'View on Zendesk Marketplace'
+    },
+    {
+        id: 'barlife',
+        title: 'Barlife Workflow Optimization',
+        badge: 'Chrome Integration , Zendesk App, Automation',
+        description: 'Optimized the workflow of the support through the use of Zendesk Custom App, Chrome Application and Zendesk Automation so there is frictionless integration between the order system and Zendesk.',
+        categories: ['zendesk', 'integrations','ai'],
+        tags: ['TypeScript', 'React', 'Zendesk Garden', 'ZAF Client', 'REST API', 'Webhooks', 'Chrome App'],
+        accent: 'teal'
+    },
+    {
+        id: 'donativini',
+        title: 'Dontativini SEO Analysis and Optimization',
+        badge: 'Shopify SEO & Development',
+        description: 'Completed a thorough SEO audit for Donativini, identifying key technical and content-related issues. Implemented comprehensive on-page and technical SEO improvements to enhance visibility and search engine performance.',
+        categories: ['shopify'],
+        tags: ['SEO', 'Liquid'],
+        accent: 'emerald'
+    },
+    {
+        id: 'demeubeltaxi',
+        title: 'Demeubeltaxi',
+        badge: 'Management System',
+        description: 'Developed and Maintained the Management system for more than 7+ years singlehandedly. Done task from taking requirement to delivering quality code.',
+        categories: ['webapp'],
+        tags: ['PHP','Legacy System','Transport Management System'],
+        accent: 'emerald',
+    },
+    {
+        id: 'mscharge',
+        title: 'MS Charge',
+        badge: 'Management System',
+        description: 'Worked full stack development with the team in React and Go to develop a Charging Station Management System that helps in managing the operations of the EV Charging Stations',
+        categories: ['webapp'],
+        tags: ['React','Go','Management System'],
+        accent: 'emerald',
+    }
+];
+---
+
+<BaseLayout 
+    title="Zendesk App Developer Portfolio | ZAF & Shopify Case Studies"
+    description="View custom Zendesk Marketplace apps, Shopify integrations, and API middleware built for Stylo, ClickSend, ApplyBoard, and PowerLedger."
+>
+    <main class="pt-24 pb-20 max-w-7xl mx-auto px-8 w-full">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto mb-16 text-center gsap-reveal">
+            <span class="font-label text-sm uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold mb-4 block">Proven Implementations</span>
+            <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6 text-slate-900 dark:text-white">
+                Selected <span class="text-transparent bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-900 dark:from-emerald-400 dark:to-teal-300 bg-clip-text italic">Works</span> & App Ecosystems.
+            </h1>
+            <p class="font-body text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+                A showcase of custom Zendesk Marketplace applications, Shopify platforms, and mission-critical API integrations built for global scale.
+            </p>
+        </section>
+
+        <!-- Category Filter Controls -->
+        <section class="mb-14 flex flex-col items-center gsap-reveal">
+            <div class="inline-flex flex-wrap justify-center gap-2.5 p-2 bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm" role="tablist" aria-label="Portfolio category filter">
+                {filterCategories.map((cat, idx) => {
+                    const count = cat.id === 'all' 
+                        ? projects.length 
+                        : projects.filter(p => p.categories.includes(cat.id as any)).length;
+                    return (
+                        <button
+                            type="button"
+                            role="tab"
+                            data-filter={cat.id}
+                            aria-selected={idx === 0 ? "true" : "false"}
+                            class={`filter-btn px-5 py-2.5 rounded-xl font-label text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 select-none cursor-pointer ${
+                                idx === 0 
+                                    ? 'active bg-emerald-600 text-white shadow-md shadow-emerald-600/20' 
+                                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-700/60'
+                            }`}
+                        >
+                            <span>{cat.label}</span>
+                            <span class="count-badge text-[11px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10">{count}</span>
+                        </button>
+                    );
+                })}
+            </div>
+            
+            <p id="filter-status" class="mt-4 text-xs font-label uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                Showing <span id="visible-count" class="font-bold text-slate-900 dark:text-white">{projects.length}</span> of {projects.length} projects
+            </p>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 transition-all duration-300">
+            {projects.map((project) => {
+                const isTeal = project.accent === 'teal';
+                return (
+                    <article 
+                        data-project-id={project.id}
+                        data-categories={JSON.stringify(project.categories)}
+                        class="project-card group bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-[2rem] p-8 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col justify-between will-change-transform"
+                    >
+                        <div>
+                            <!-- Header Row: Badge & External Link Icon -->
+                            <div class="flex items-center justify-between gap-4 mb-6">
+                                <span class={`inline-flex items-center font-label text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border ${
+                                    isTeal 
+                                        ? 'bg-teal-500/10 text-teal-800 dark:text-teal-300 border-teal-500/20' 
+                                        : 'bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border-emerald-500/20'
+                                }`}>
+                                    {project.badge}
+                                </span>
+                                {project.url && (
+                                    <a 
+                                        href={project.url}
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        aria-label={`Open ${project.title}`}
+                                        class={`w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 flex items-center justify-center text-slate-600 dark:text-slate-300 transition-all duration-300 group-hover:scale-110 ${
+                                            isTeal 
+                                                ? 'group-hover:bg-teal-600 group-hover:text-white group-hover:border-teal-600' 
+                                                : 'group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600'
+                                        }`}
+                                    >
+                                        <span class="material-symbols-outlined text-lg" data-icon="arrow_outward">arrow_outward</span>
+                                    </a>
+                                )}
+                            </div>
+
+                            <!-- Title with optional link -->
+                            <h2 class="font-headline text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
+                                {project.url ? (
+                                    <a 
+                                        href={project.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        class={`inline-flex items-center gap-2 transition-colors ${
+                                            isTeal 
+                                                ? 'hover:text-teal-700 dark:hover:text-teal-400' 
+                                                : 'hover:text-emerald-700 dark:hover:text-emerald-400'
+                                        }`}
+                                    >
+                                        <span>{project.title}</span>
+                                    </a>
+                                ) : (
+                                    <span>{project.title}</span>
+                                )}
+                            </h2>
+
+                            <!-- Description -->
+                            <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        <!-- Footer: Tech Tags & Direct Link Action -->
+                        <div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+                            <div class="flex flex-wrap gap-2">
+                                {project.tags.map((tag) => (
+                                    <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800/90 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {project.url && (
+                                <a 
+                                    href={project.url}
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class={`inline-flex items-center gap-1.5 font-headline font-bold text-sm transition-colors mt-2 ${
+                                        isTeal 
+                                            ? 'text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300' 
+                                            : 'text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300'
+                                    }`}
+                                >
+                                    <span>{project.urlText || 'View Project'}</span>
+                                    <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+                                </a>
+                            )}
+                        </div>
+                    </article>
+                );
+            })}
+        </section>
+
+        <!-- Empty State (Hidden by default) -->
+        <div id="no-projects-found" class="hidden text-center py-20 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl mb-32">
+            <span class="material-symbols-outlined text-5xl text-slate-400 dark:text-slate-600 mb-4" data-icon="search_off">search_off</span>
+            <h3 class="font-headline text-2xl font-bold text-slate-900 dark:text-white mb-2">No projects found</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6">No works matched the selected filter category.</p>
+            <button 
+                type="button" 
+                id="reset-filter-btn"
+                class="px-6 py-2.5 bg-emerald-600 text-white font-headline font-bold rounded-full text-sm hover:bg-emerald-700 transition-all shadow-md shadow-emerald-600/20"
+            >
+                Reset to All Projects
+            </button>
+        </div>
+
+        <!-- Final CTA -->
+        <CTA />
+    </main>
+
+    <script is:inline>
+        document.addEventListener("DOMContentLoaded", () => {
+            // GSAP Reveal Animations for sections
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.utils.toArray(".gsap-reveal").forEach((section) => {
+                    gsap.from(section, {
+                        opacity: 0,
+                        y: 40,
+                        duration: 1,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 85%",
+                        }
+                    });
+                });
+            }
+
+            // Interactive Category Filter Logic
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const visibleCountEl = document.getElementById('visible-count');
+            const emptyState = document.getElementById('no-projects-found');
+            const resetBtn = document.getElementById('reset-filter-btn');
+
+            function applyFilter(category) {
+                let visibleCount = 0;
+
+                projectCards.forEach((card) => {
+                    const cardCategories = JSON.parse(card.getAttribute('data-categories') || '[]');
+                    const isMatch = category === 'all' || cardCategories.includes(category);
+
+                    if (isMatch) {
+                        visibleCount++;
+                        card.style.display = 'flex';
+                        if (typeof gsap !== 'undefined') {
+                            gsap.fromTo(card, 
+                                { opacity: 0, scale: 0.95, y: 15 },
+                                { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: "power2.out" }
+                            );
+                        }
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update visible count & empty state
+                if (visibleCountEl) {
+                    visibleCountEl.textContent = visibleCount;
+                }
+
+                if (emptyState) {
+                    if (visibleCount === 0) {
+                        emptyState.classList.remove('hidden');
+                    } else {
+                        emptyState.classList.add('hidden');
+                    }
+                }
+
+                // Update active button state
+                filterButtons.forEach((btn) => {
+                    const btnFilter = btn.getAttribute('data-filter');
+                    if (btnFilter === category) {
+                        btn.setAttribute('aria-selected', 'true');
+                        btn.classList.add('active', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+                        btn.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:text-slate-900', 'dark:hover:text-white', 'hover:bg-white/60', 'dark:hover:bg-slate-700/60');
+                    } else {
+                        btn.setAttribute('aria-selected', 'false');
+                        btn.classList.remove('active', 'bg-emerald-600', 'text-white', 'shadow-md', 'shadow-emerald-600/20');
+                        btn.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:text-slate-900', 'dark:hover:text-white', 'hover:bg-white/60', 'dark:hover:bg-slate-700/60');
+                    }
+                });
+            }
+
+            filterButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-filter');
+                    if (category) {
+                        applyFilter(category);
+                    }
+                });
+            });
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    applyFilter('all');
+                });
+            }
+        });
+    </script>
+</BaseLayout>
