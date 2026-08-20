@@ -8,17 +8,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint \"**/*.{ts,tsx,astro}\""
+    "lint": "eslint \"**/*.{ts,astro}\""
   },
   "devDependencies": {
-    "@astrojs/preact": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
-    "astro": "^6.1.5",
+    "astro": "^7.2.4",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-base-typescript": "^1.1.0",
-    "eslint-config-preact": "^2.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-import": "^2.32.0",
@@ -28,11 +26,6 @@
     "sass": "^1.99.0"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.3",
-    "@astrojs/sitemap": "^3.7.2",
-    "framer-motion": "^12.38.0",
-    "preact": "^10.29.1",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "@astrojs/sitemap": "^3.7.3"
   }
 }

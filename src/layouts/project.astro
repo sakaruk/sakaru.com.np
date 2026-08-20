@@ -1,8 +1,17 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button/index.jsx';
-import Footer from '../components/Footer/index.jsx';
-import Nav from '../components/Nav/index.jsx';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+
+export interface Props {
+  content: {
+    lang?: string;
+    title: string;
+    description: string;
+    img?: string;
+    tags: string[];
+  };
+}
 
 const { content } = Astro.props;
 ---
@@ -82,8 +91,8 @@ const { content } = Astro.props;
 			<div class="content"><slot /></div>
 		</div>
 		<footer class="tac mt6">
-			<a href="/projects">
-				<Button>View More</Button>
+			<a href="/portfolio" class="button">
+				View More
 			</a>
 		</footer>
 		<Footer />

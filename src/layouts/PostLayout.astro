@@ -1,5 +1,18 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  content: {
+    title: string;
+    description?: string;
+    thumbnail?: string;
+    date?: string;
+    author?: string;
+    readingTime?: string;
+    tag?: string;
+  };
+}
+
 const { content } = Astro.props;
 ---
 <BaseLayout 

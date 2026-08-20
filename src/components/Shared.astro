@@ -1,0 +1,48 @@
+---
+export interface SharedItem {
+  url?: string;
+  frontmatter?: {
+    date?: string;
+    tag?: string;
+    title?: string;
+    description?: string;
+    [key: string]: any;
+  };
+  [key: string]: any;
+}
+
+export interface Props {
+  items?: SharedItem[];
+  basePath?: string;
+}
+
+const { items = [], basePath } = Astro.props;
+---
+
+<div class="space-y-1">
+  {items.map((item) => (
+    <article 
+      class="group gsap-reveal relative py-12 px-0 transition-all duration-300"
+    >
+      <div class="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 relative z-10">
+        <time class="font-label text-sm text-on-surface-variant/60 w-32 shrink-0 pt-1">{item.frontmatter?.date}</time>
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-[10px] font-label font-bold text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded">{item.frontmatter?.tag}</span>
+          </div>
+          <h2 class="text-3xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors mb-4">
+            <a href={item.url}>{item.frontmatter?.title}</a>
+          </h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+            {item.frontmatter?.description || "A deep dive into custom app frameworks..."}
+          </p>
+          <div class="mt-6 flex items-center gap-2 text-primary font-label font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 transition-transform">
+            <a href={item.url}>READ {basePath === 'talks' ? 'TALK' : 'ARTICLE'}</a>
+            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-surface-container-low opacity-0 group-hover:opacity-100 -mx-8 rounded-xl transition-all duration-300 -z-0"></div>
+    </article>
+  ))}
+</div>
