@@ -110,19 +110,19 @@ const communityContributions = [
 
         <!-- Community Contributions Section -->
         <section class="mb-32 gsap-reveal">
-            <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-12">Community Leadership</h2>
+            <h2 class="text-4xl md:text-5xl font-headline font-black text-slate-900 dark:text-white mb-12">Community Leadership</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {communityContributions.map((item) => (
-                    <div class={`bg-surface-container-low p-10 rounded-3xl border border-transparent hover:border-${item.colorClass}/20 transition-all duration-300 shadow-xl shadow-${item.colorClass}/5 hover:-translate-y-1 flex flex-col`}>
-                        <div class={`w-16 h-16 bg-${item.colorClass}/10 rounded-2xl flex items-center justify-center mb-6`}>
-                            <span class={`material-symbols-outlined text-3xl text-${item.colorClass}`} data-icon={item.icon}>{item.icon}</span>
+                    <div class="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col">
+                        <div class="w-14 h-14 bg-emerald-50 dark:bg-emerald-950/40 rounded-2xl flex items-center justify-center mb-6 text-emerald-700 dark:text-emerald-400">
+                            <span class="material-symbols-outlined text-3xl" data-icon={item.icon}>{item.icon}</span>
                         </div>
-                        <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">{item.title}</h3>
-                        <p class="text-on-surface-variant leading-relaxed mb-6 flex-1">
+                        <h3 class="font-headline text-2xl font-bold text-slate-900 dark:text-white mb-4">{item.title}</h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 flex-1">
                             {item.description}
                         </p>
                         {item.link && (
-                            <a href={item.link.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm uppercase tracking-widest hover:text-primary-variant transition-colors group mt-auto">
+                            <a href={item.link.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm uppercase tracking-widest hover:text-emerald-800 transition-colors group mt-auto">
                                 {item.link.label}
                                 <span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="open_in_new">open_in_new</span>
                             </a>
@@ -136,48 +136,48 @@ const communityContributions = [
         <section class="mb-32">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 gsap-reveal">
                 <div>
-                    <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">Public Speaking</span>
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface">Technical Talks</h2>
+                    <span class="font-label text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold mb-3 block">Public Speaking</span>
+                    <h2 class="text-4xl md:text-5xl font-headline font-black text-slate-900 dark:text-white">Technical Talks</h2>
                 </div>
-                <p class="text-on-surface-variant max-w-md text-lg">
+                <p class="text-slate-600 dark:text-slate-300 max-w-md text-lg">
                     Sharing knowledge across stages — making tech more accessible, one room at a time.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {talks.map((talk: any) => (
-                    <article class="group gsap-reveal bg-surface-container-low p-8 rounded-3xl border border-transparent hover:border-primary/20 transition-all duration-300 shadow-xl shadow-primary/5 hover:-translate-y-1 flex flex-col h-full">
+                    <article class="group gsap-reveal bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col h-full">
                         <!-- Image/Thumbnail area -->
-                        <div class="aspect-video bg-surface-container-high rounded-2xl mb-8 overflow-hidden relative block">
-                            <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10"></a>
+                        <div class="aspect-video bg-emerald-50 dark:bg-slate-800 rounded-2xl mb-8 overflow-hidden relative block">
+                            <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10" aria-label={`View talk: ${talk.title}`}></a>
                             <img 
                                 src={talk.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
                                 alt={talk.title} 
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-0" 
                             />
-                            <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-0"></div>
+                            <div class="absolute inset-0 bg-emerald-950/10 mix-blend-overlay z-0"></div>
                         </div>
                         
                         <div class="flex flex-col flex-1">
                             <div class="flex items-center gap-3 mb-3">
-                                <span class="font-label text-xs font-bold text-primary block uppercase tracking-widest">{talk.type || "Talk"}</span>
-                                <span class="h-px w-4 bg-outline-variant"></span>
+                                <span class="font-label text-xs font-bold text-emerald-700 dark:text-emerald-400 block uppercase tracking-widest">{talk.type || "Talk"}</span>
+                                <span class="h-px w-4 bg-slate-200 dark:border-slate-700"></span>
                             </div>
-                            <h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                            <h3 class="font-headline text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                                 <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="relative z-10">{talk.title}</a>
                             </h3>
-                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6 flex-1">
+                            <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6 flex-1">
                                 {talk.description}
                             </p>
-                            <div class="flex flex-wrap gap-4 relative z-10 mt-auto">
+                            <div class="flex flex-wrap gap-4 relative z-10 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
                                 {talk.video_url && (
-                                    <a href={talk.video_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-label font-bold text-sm hover:underline">
+                                    <a href={talk.video_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm hover:underline">
                                         <span class="material-symbols-outlined text-lg" data-icon="play_circle">play_circle</span>
                                         Watch Video
                                     </a>
                                 )}
                                 {talk.slides_url && (
-                                    <a href={talk.slides_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-on-surface-variant font-label font-bold text-sm hover:text-on-surface hover:underline transition-colors">
+                                    <a href={talk.slides_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-label font-bold text-sm hover:text-slate-900 dark:hover:text-white hover:underline transition-colors">
                                         <span class="material-symbols-outlined text-lg" data-icon="auto_stories">auto_stories</span>
                                         Slides
                                     </a>
@@ -191,19 +191,19 @@ const communityContributions = [
 
         <!-- CTA Section -->
         <section class="mt-32 gsap-reveal">
-            <div class="bg-gradient-to-br from-primary to-tertiary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+            <div class="bg-gradient-to-br from-emerald-800 to-teal-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-emerald-900/20">
                 <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-black/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-black/20 rounded-full blur-3xl"></div>
                 
                 <div class="relative z-10">
-                    <span class="font-label text-sm uppercase tracking-widest text-on-primary/70 font-bold mb-6 block">Open to Collaboration</span>
-                    <h2 class="text-4xl md:text-6xl font-headline font-black text-on-primary mb-8">
+                    <span class="font-label text-xs uppercase tracking-widest text-emerald-200 font-bold mb-6 block">Open to Collaboration</span>
+                    <h2 class="text-4xl md:text-5xl font-headline font-black text-white mb-6">
                         Speaker. Organizer. Collaborator.
                     </h2>
-                    <p class="text-xl md:text-2xl text-on-primary/80 max-w-2xl mx-auto mb-12 font-body leading-relaxed">
+                    <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-10 font-body leading-relaxed">
                         Whether you need a speaker for your next event, a co-organizer for a community initiative, or just someone to bounce ideas off — I'm always happy to connect and build something together.
                     </p>
-                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-4 bg-surface-container-lowest text-primary px-10 py-5 rounded-full font-headline font-black text-xl hover:scale-105 active:scale-95 transition-transform shadow-xl">
+                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-3 bg-white text-emerald-800 px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-transform shadow-xl">
                         Let's Connect
                         <span class="material-symbols-outlined font-bold" data-icon="mail">mail</span>
                     </a>

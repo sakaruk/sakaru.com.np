@@ -19,148 +19,142 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </section>
 
         <!-- Portfolio Grid -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
             <!-- Stylo Assist -->
-            <div class="group gsap-reveal">
-                <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-                    <div class="absolute inset-0 bg-primary opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12">
-                        <span class="font-headline text-6xl font-black text-primary/10 select-none">STYLO</span>
-                    </div>
+            <div class="group gsap-reveal bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-emerald-50 dark:bg-emerald-950/30 rounded-2xl mb-6 overflow-hidden relative border border-emerald-100/80 dark:border-emerald-900/30 flex items-center justify-center">
+                    <span class="font-headline text-5xl font-black text-emerald-800/15 dark:text-emerald-400/20 select-none">STYLO</span>
                 </div>
-                <div class="px-4">
-                    <span class="font-label text-xs font-bold text-primary mb-3 block uppercase tracking-widest">Zendesk Marketplace App</span>
-                    <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Stylo Assist AI</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                        An AI-driven assistant for Zendesk agents built with TypeScript and React. Leverages GPT models to provide real-time sentiment analysis and response suggestions.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">TypeScript</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">React</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Tailwind</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">ZAF Client</span>
+                <div class="px-2 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="font-label text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-2 block uppercase tracking-widest">Zendesk Marketplace App</span>
+                        <h2 class="font-headline text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">Stylo Assist AI</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            An AI-driven assistant for Zendesk agents built with TypeScript and React. Leverages GPT models to provide real-time sentiment analysis and response suggestions.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">TypeScript</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">React</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Tailwind</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">ZAF Client</span>
                     </div>
                 </div>
             </div>
 
             <!-- ClickSend -->
-            <div class="group gsap-reveal">
-                <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-                    <div class="absolute inset-0 bg-secondary opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12">
-                        <span class="font-headline text-6xl font-black text-secondary/10 select-none">CLICKSEND</span>
-                    </div>
+            <div class="group gsap-reveal bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-teal-50 dark:bg-teal-950/30 rounded-2xl mb-6 overflow-hidden relative border border-teal-100/80 dark:border-teal-900/30 flex items-center justify-center">
+                    <span class="font-headline text-5xl font-black text-teal-800/15 dark:text-teal-400/20 select-none">CLICKSEND</span>
                 </div>
-                <div class="px-4">
-                    <span class="font-label text-xs font-bold text-secondary mb-3 block uppercase tracking-widest">SMS Integration</span>
-                    <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-secondary transition-colors">ClickSend for Zendesk</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                        Bridging customer support and mobile engagement. A custom Zendesk app allowing agents to send and receive SMS directly within tickets via the ClickSend API.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Node.js</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">ZAF Client</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">REST API</span>
+                <div class="px-2 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="font-label text-xs font-bold text-teal-700 dark:text-teal-400 mb-2 block uppercase tracking-widest">SMS Integration</span>
+                        <h2 class="font-headline text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors">ClickSend for Zendesk</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Bridging customer support and mobile engagement. A custom Zendesk app allowing agents to send and receive SMS directly within tickets via the ClickSend API.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Node.js</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">ZAF Client</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">REST API</span>
                     </div>
                 </div>
             </div>
 
             <!-- Google My Business -->
-            <div class="group gsap-reveal">
-                <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-                    <div class="absolute inset-0 bg-tertiary opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12">
-                        <span class="font-headline text-6xl font-black text-tertiary/10 select-none">GMB</span>
-                    </div>
+            <div class="group gsap-reveal bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-emerald-50 dark:bg-emerald-950/30 rounded-2xl mb-6 overflow-hidden relative border border-emerald-100/80 dark:border-emerald-900/30 flex items-center justify-center">
+                    <span class="font-headline text-5xl font-black text-emerald-800/15 dark:text-emerald-400/20 select-none">GMB</span>
                 </div>
-                <div class="px-4">
-                    <span class="font-label text-xs font-bold text-tertiary mb-3 block uppercase tracking-widest">Enterprise Integration</span>
-                    <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-tertiary transition-colors">GMB to Zendesk Sync</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                        High-traffic integration for PlusCloud clients. Syncing Google My Business reviews and messages into Zendesk tickets using a Laravel-based middleware.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Laravel</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">OAuth 2.0</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">MySQL</span>
+                <div class="px-2 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="font-label text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-2 block uppercase tracking-widest">Enterprise Integration</span>
+                        <h2 class="font-headline text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">GMB to Zendesk Sync</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            High-traffic integration for PlusCloud clients. Syncing Google My Business reviews and messages into Zendesk tickets using a Laravel-based middleware.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Laravel</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">OAuth 2.0</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">MySQL</span>
                     </div>
                 </div>
             </div>
 
             <!-- PowerLedger (Australia) -->
-            <div class="group gsap-reveal">
-                <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-                    <div class="absolute inset-0 bg-primary opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-primary/10 font-black text-4xl select-none leading-none">
-                        POWER <br/> LEDGER
-                    </div>
+            <div class="group gsap-reveal bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-teal-50 dark:bg-teal-950/30 rounded-2xl mb-6 overflow-hidden relative border border-teal-100/80 dark:border-teal-900/30 flex items-center justify-center text-center text-teal-800/15 dark:text-teal-400/20 font-black text-3xl select-none leading-none">
+                    POWER <br/> LEDGER
                 </div>
-                <div class="px-4">
-                    <span class="font-label text-xs font-bold text-primary mb-3 block uppercase tracking-widest">Enterprise Integration</span>
-                    <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">PowerLedger CX Layer</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                        Architecting the custom support layer for a global energy marketplace. Integrating internal blockchain transaction data directly into the Zendesk side-pane for customer service agents.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">React</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Node.js</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">ZAF Client</span>
+                <div class="px-2 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="font-label text-xs font-bold text-teal-700 dark:text-teal-400 mb-2 block uppercase tracking-widest">Enterprise Integration</span>
+                        <h2 class="font-headline text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors">PowerLedger CX Layer</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Architecting the custom support layer for a global energy marketplace. Integrating internal blockchain transaction data directly into the Zendesk side-pane for customer service agents.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">React</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Node.js</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">ZAF Client</span>
                     </div>
                 </div>
             </div>
 
             <!-- De Meubeltaxi (Netherlands) -->
-            <div class="group gsap-reveal">
-                <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-                    <div class="absolute inset-0 bg-secondary opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-secondary/10 font-black text-4xl select-none leading-none">
-                        DE <br/> MEUBELTAXI
-                    </div>
+            <div class="group gsap-reveal bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-emerald-50 dark:bg-emerald-950/30 rounded-2xl mb-6 overflow-hidden relative border border-emerald-100/80 dark:border-emerald-900/30 flex items-center justify-center text-center text-emerald-800/15 dark:text-emerald-400/20 font-black text-3xl select-none leading-none">
+                    DE <br/> MEUBELTAXI
                 </div>
-                <div class="px-4">
-                    <span class="font-label text-xs font-bold text-secondary mb-3 block uppercase tracking-widest">Shopify Plus Build</span>
-                    <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-secondary transition-colors">Demeubeltaxi Headless Store</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                        Engineered a high-performance headless Shopify Plus experience for the leading Dutch furniture delivery service. Focused on custom booking logic and real-time delivery tracking.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Shopify Plus</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Liquid</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Hydrogen</span>
+                <div class="px-2 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="font-label text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-2 block uppercase tracking-widest">Shopify Plus Build</span>
+                        <h2 class="font-headline text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">Demeubeltaxi Headless Store</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Engineered a high-performance headless Shopify Plus experience for the leading Dutch furniture delivery service. Focused on custom booking logic and real-time delivery tracking.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Shopify Plus</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Liquid</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Hydrogen</span>
                     </div>
                 </div>
             </div>
 
             <!-- Quark AI -->
-            <div class="group gsap-reveal">
-                <div class="aspect-video bg-surface-container-high rounded-3xl mb-8 overflow-hidden relative border border-transparent group-hover:border-primary/30 transition-all duration-500">
-                    <div class="absolute inset-0 bg-primary opacity-5 group-hover:opacity-10 transition-opacity"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12">
-                        <span class="font-headline text-6xl font-black text-primary/10 select-none">QUARK AI</span>
-                    </div>
+            <div class="group gsap-reveal bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 hover:border-emerald-500/40 hover:shadow-xl shadow-sm transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-emerald-50 dark:bg-emerald-950/30 rounded-2xl mb-6 overflow-hidden relative border border-emerald-100/80 dark:border-emerald-900/30 flex items-center justify-center">
+                    <span class="font-headline text-5xl font-black text-emerald-800/15 dark:text-emerald-400/20 select-none">QUARK AI</span>
                 </div>
-                <div class="px-4">
-                    <span class="font-label text-xs font-bold text-primary mb-3 block uppercase tracking-widest">Early AI Integration</span>
-                    <h2 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Quark AI Legacy App</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                        Custom Zendesk implementation featuring legacy support and jQuery-based framework integration. Focused on knowledge base automation and predictive ticket routing.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">jQuery</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">Webpack</span>
-                        <span class="px-3 py-1 bg-surface-container-highest rounded-full font-label text-xs">ZCLI</span>
+                <div class="px-2 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="font-label text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-2 block uppercase tracking-widest">Early AI Integration</span>
+                        <h2 class="font-headline text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">Quark AI Legacy App</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Custom Zendesk implementation featuring legacy support and jQuery-based framework integration. Focused on knowledge base automation and predictive ticket routing.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">jQuery</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">Webpack</span>
+                        <span class="px-3 py-1 bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 rounded-full font-label text-xs text-slate-700 dark:text-slate-300">ZCLI</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Final CTA -->
-        <section class="max-w-4xl mx-auto px-8 py-20 bg-primary-fixed/30 rounded-[3rem] text-center mb-10 gsap-reveal">
-            <h2 class="font-headline text-4xl font-extrabold mb-8">Need a custom integration?</h2>
-            <p class="text-on-primary-fixed-variant text-xl mb-12">
-                I help enterprises and startups build robust links between their product and customer support. Let's build your next app.
+        <section class="max-w-4xl mx-auto px-8 py-20 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-[3rem] text-center mb-10 gsap-reveal shadow-lg">
+            <h2 class="font-headline text-4xl font-extrabold text-slate-900 dark:text-white mb-6">Need a custom integration?</h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                I help enterprises and startups build robust links between their product and customer support. Let's engineer your next integration.
             </p>
-            <a href="/about" class="inline-block bg-primary text-on-primary font-headline font-bold py-4 px-12 rounded-2xl hover:scale-105 transition-all">
+            <a href="/about" class="inline-block bg-emerald-600 text-white font-headline font-bold py-4 px-10 rounded-full hover:bg-emerald-700 hover:scale-105 transition-all shadow-xl shadow-emerald-600/20">
                 Learn more...
             </a>
         </section>
