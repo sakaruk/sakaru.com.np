@@ -27,8 +27,6 @@
     "sass": "^1.99.0"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.2.3",
-    "@astrojs/sitemap": "^3.7.3",
-    "wrangler": "^4.124.0"
+    "@astrojs/sitemap": "^3.7.3"
   }
 }
