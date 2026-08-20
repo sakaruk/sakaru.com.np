@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint \"**/*.{ts,astro}\""
+    "lint": "eslint \"**/*.{ts,astro}\"",
+    "generate-types": "wrangler types"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.58.1",
@@ -26,6 +27,8 @@
     "sass": "^1.99.0"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.3"
+    "@astrojs/cloudflare": "^14.2.3",
+    "@astrojs/sitemap": "^3.7.3",
+    "wrangler": "^4.124.0"
   }
 }
