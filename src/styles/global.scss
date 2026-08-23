@@ -57,11 +57,21 @@
 	--t-active: var(--c-emerald);
 }
 
+:root.dark {
+	--c-black: #f8fafc;
+	--c-white: #020617;
+	--t-fg: #f1f5f9;
+	--t-bg: #020617;
+	--t-subdue: #94a3b8;
+	--t-active: #34d399;
+}
+
 // Base
 
 body {
 	margin: 0;
 	color: var(--t-fg);
+	background-color: var(--t-bg);
 	font-family: 'Inter', 'system-ui', sans-serif;
 }
 
