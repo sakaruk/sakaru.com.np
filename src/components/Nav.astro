@@ -1,11 +1,13 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const normalizedPath = pathname.replace(/\/+$/, '');
+const rawPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/+$/, '');
+const cleanPath = (rawPath === '' || rawPath === '/index' || rawPath === 'index') ? '/' : rawPath;
 
 const isActive = (path: string) => {
-    if (path === '' && (normalizedPath === '' || normalizedPath === '/')) return true;
-    if (path !== '' && (normalizedPath === `/${path}` || normalizedPath.startsWith(`/${path}/`))) return true;
-    return false;
+    if (path === '' || path === '/') {
+        return cleanPath === '/';
+    }
+    const target = path.startsWith('/') ? path : `/${path}`;
+    return cleanPath === target || cleanPath.startsWith(`${target}/`);
 };
 ---
 
@@ -31,8 +33,9 @@ const isActive = (path: string) => {
     <nav id="nav-links" class="hidden md:flex flex-col md:flex-row items-stretch md:items-center gap-1.5 md:gap-8 font-headline font-semibold tracking-tight mt-4 md:mt-0 pt-3 md:pt-0 pb-3 md:pb-0 border-t border-slate-200/80 dark:border-slate-800/80 md:border-t-0 w-full md:w-auto">
       <a 
         href="/"
+        data-nav-href="/"
         class={`w-full md:w-auto px-4 py-3 md:px-0 md:py-0 rounded-xl transition-all duration-200 flex items-center ${
-            isActive('') 
+            isActive('/') 
                 ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-bold md:bg-transparent md:border-b-2 md:border-emerald-600 md:dark:border-emerald-400 md:rounded-none md:pb-0.5' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:text-emerald-700 md:dark:hover:text-emerald-400'
         }`}
@@ -41,8 +44,9 @@ const isActive = (path: string) => {
       </a>
       <a 
         href="/about"
+        data-nav-href="/about"
         class={`w-full md:w-auto px-4 py-3 md:px-0 md:py-0 rounded-xl transition-all duration-200 flex items-center ${
-            isActive('about') 
+            isActive('/about') 
                 ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-bold md:bg-transparent md:border-b-2 md:border-emerald-600 md:dark:border-emerald-400 md:rounded-none md:pb-0.5' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:text-emerald-700 md:dark:hover:text-emerald-400'
         }`}
@@ -51,8 +55,9 @@ const isActive = (path: string) => {
       </a>
       <a 
         href="/portfolio"
+        data-nav-href="/portfolio"
         class={`w-full md:w-auto px-4 py-3 md:px-0 md:py-0 rounded-xl transition-all duration-200 flex items-center ${
-            isActive('portfolio') 
+            isActive('/portfolio') 
                 ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-bold md:bg-transparent md:border-b-2 md:border-emerald-600 md:dark:border-emerald-400 md:rounded-none md:pb-0.5' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:text-emerald-700 md:dark:hover:text-emerald-400'
         }`}
@@ -61,8 +66,9 @@ const isActive = (path: string) => {
       </a>
       <a 
         href="/community"
+        data-nav-href="/community"
         class={`w-full md:w-auto px-4 py-3 md:px-0 md:py-0 rounded-xl transition-all duration-200 flex items-center ${
-            isActive('community') 
+            isActive('/community') 
                 ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-bold md:bg-transparent md:border-b-2 md:border-emerald-600 md:dark:border-emerald-400 md:rounded-none md:pb-0.5' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/70 md:hover:bg-transparent md:dark:hover:bg-transparent md:hover:text-emerald-700 md:dark:hover:text-emerald-400'
         }`}
@@ -73,6 +79,30 @@ const isActive = (path: string) => {
   </div>
 </header>
 <script is:inline>
+    // Sync active nav item on client load
+    (function updateActiveNav() {
+        const raw = window.location.pathname.replace(/\.html$/, '').replace(/\/+$/, '');
+        const current = (raw === '' || raw === '/index' || raw === 'index') ? '/' : raw;
+        
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            const href = link.getAttribute('data-nav-href') || link.getAttribute('href') || '/';
+            const rawHref = href.replace(/\.html$/, '').replace(/\/+$/, '');
+            const cleanHref = (rawHref === '' || rawHref === '/index' || rawHref === 'index') ? '/' : rawHref;
+            
+            const isCurrentActive = cleanHref === '/' 
+                ? (current === '/') 
+                : (current === cleanHref || current.startsWith(cleanHref + '/'));
+            
+            if (isCurrentActive) {
+                link.classList.add('bg-emerald-500/10', 'text-emerald-700', 'dark:text-emerald-400', 'font-bold', 'md:bg-transparent', 'md:border-b-2', 'md:border-emerald-600', 'md:dark:border-emerald-400', 'md:rounded-none', 'md:pb-0.5');
+                link.classList.remove('text-slate-600', 'dark:text-slate-400');
+            } else {
+                link.classList.remove('bg-emerald-500/10', 'text-emerald-700', 'dark:text-emerald-400', 'font-bold', 'md:border-b-2', 'md:border-emerald-600', 'md:dark:border-emerald-400', 'md:pb-0.5');
+                link.classList.add('text-slate-600', 'dark:text-slate-400');
+            }
+        });
+    })();
+
     const menuBtn = document.getElementById('mobile-menu-trigger');
     const navLinks = document.getElementById('nav-links');
     const menuIcon = document.getElementById('mobile-menu-icon');

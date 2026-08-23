@@ -13,7 +13,7 @@ export interface Props {
 }
 
 const pathname = new URL(Astro.request.url).pathname;
-const isAboutPage = pathname.replace(/\/$/, '') === '/about';
+const isAboutPage = pathname.replace(/\.html$/, '').replace(/\/+$/, '') === '/about';
 
 const {
   badge = "Ready for the Next Phase?",
@@ -31,10 +31,10 @@ const {
 const resolvedSecondaryTarget = secondaryButtonTarget ?? (secondaryButtonHref.startsWith('http') ? '_blank' : undefined);
 ---
 
-<section class={`max-w-7xl mx-auto px-6 sm:px-8 py-16 sm:py-24 md:py-28 bg-white dark:bg-slate-900 rounded-[2.5rem] sm:rounded-[3rem] text-center mb-10 gsap-reveal shadow-xl border border-slate-200/80 dark:border-slate-800 relative overflow-hidden ${className}`}>
-  <!-- Decorative Background Blurs -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none"></div>
-  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-teal-500/10 dark:bg-teal-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+<section class={`max-w-7xl mx-auto px-6 sm:px-8 py-16 sm:py-24 md:py-28 bg-white dark:bg-slate-900 rounded-[2.5rem] sm:rounded-[3rem] text-center mb-10 gsap-reveal shadow-xl border border-slate-200/80 dark:border-slate-800 relative overflow-hidden isolate [mask-image:-webkit-radial-gradient(white,black)] ${className}`}>
+  <!-- Subtle Internal Radial Accents (No negative margin blurs to prevent Safari corner bleeding) -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.05),transparent_50%)] pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(20,184,166,0.08),transparent_50%)] dark:bg-[radial-gradient(circle_at_bottom_right,rgba(20,184,166,0.05),transparent_50%)] pointer-events-none"></div>
   
   <div class="max-w-3xl mx-auto relative z-10">
     {badge && (
@@ -67,7 +67,7 @@ const resolvedSecondaryTarget = secondaryButtonTarget ?? (secondaryButtonHref.st
           class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 sm:px-10 py-4 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-headline font-bold text-base sm:text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" 
           href={secondaryButtonHref}
           target={resolvedSecondaryTarget}
-          rel={resolvedSecondaryTarget === '_blank' ? 'noopener noreferrer' : undefined}
+          rel={resolvedSecondaryTarget === '_blank' ? 'nofollow noopener noreferrer' : undefined}
         >
           {secondaryButtonText}
         </a>
