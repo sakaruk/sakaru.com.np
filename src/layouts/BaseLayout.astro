@@ -101,9 +101,17 @@ const { title, description, image } = Astro.props;
 		.prose strong {
 			color: var(--primary) !important;
 		}
+		::selection {
+			background-color: #059669;
+			color: #ffffff;
+		}
+		:root.dark ::selection, .dark ::selection {
+			background-color: #34d399;
+			color: #020617;
+		}
 	</style>
 </head>
-<body class="bg-background font-body text-on-surface antialiased transition-colors duration-300 selection:bg-emerald-500/20 selection:text-emerald-300">
+<body class="bg-background font-body text-on-surface antialiased transition-colors duration-300 selection:bg-emerald-600 selection:text-white dark:selection:bg-emerald-400 dark:selection:text-slate-950">
 	<Nav />
 	
 	<slot />
