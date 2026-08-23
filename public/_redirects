@@ -1,0 +1,4 @@
+# Permanent 301 redirects to remove trailing slashes
+/about/ /about 301
+/portfolio/ /portfolio 301
+/community/ /community 301

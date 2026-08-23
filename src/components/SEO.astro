@@ -14,7 +14,10 @@ const {
   image = "/images/site_image.png",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+const cleanPathname = Astro.url.pathname === '/' 
+  ? '/' 
+  : Astro.url.pathname.replace(/\.html$/, '').replace(/\/+$/, '');
+const canonicalURL = new URL(cleanPathname, Astro.site || Astro.url.origin);
 const resolvedImage = image.startsWith('http') ? image : new URL(image, Astro.site || Astro.url.origin);
 
 // JSON-LD Person Schema based on April 2026 Audit

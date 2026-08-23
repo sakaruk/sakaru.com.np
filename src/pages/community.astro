@@ -86,29 +86,57 @@ const communityContributions = [
         }
     }
 ];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Community & Public Speaking | Sakar Upadhyaya Khatiwada",
+  "description": "Tech community builder in Nepal — co-organizer of AI Conf 2026, BarCamp Kathmandu, and Web Weekend Kathmandu, and speaker at WordCamps.",
+  "url": "https://sakaru.com.np/community",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": talks.map((talk, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "CreativeWork",
+        "name": talk.title,
+        "description": talk.description,
+        "author": {
+          "@type": "Person",
+          "name": "Sakar Upadhyaya Khatiwada",
+          "url": "https://sakaru.com.np"
+        },
+        "url": talk.video_url || talk.slides_url || "https://sakaru.com.np/community"
+      }
+    }))
+  }
+};
 ---
 
 <BaseLayout 
     title="Community & Public Speaking | Sakar Upadhyaya Khatiwada"
     description="Sakar Upadhyaya Khatiwada is a tech community builder in Nepal — co-organizer of AI Conf 2026, BarCamp Kathmandu, and Web Weekend Kathmandu, and a WordCamp speaker with talks on WordPress performance, accessibility, React, and more."
 >
-    <main class="pt-24 pb-20 max-w-7xl mx-auto px-8">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <main class="pt-28 pb-20 max-w-7xl mx-auto px-6 sm:px-8">
         <!-- Hero Section -->
-        <section class="max-w-7xl mx-auto mb-32 gsap-reveal pt-20">
+        <section class="max-w-7xl mx-auto mb-24 sm:mb-32 gsap-reveal">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7">
-                    <span class="font-label text-sm uppercase tracking-widest text-primary font-bold mb-4 block">Community Builder & Tech Speaker</span>
-                    <h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-8">
-                        Fostering <span class="text-primary italic">Community & Knowledge</span>
+                    <span class="font-label text-xs sm:text-sm uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold mb-4 block">Community Builder & Tech Speaker</span>
+                    <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-8 text-slate-900 dark:text-white">
+                        Fostering <span class="text-transparent bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-900 dark:from-emerald-400 dark:to-teal-300 bg-clip-text">Community &amp; Knowledge</span>
                     </h1>
-                    <p class="font-body text-xl text-on-surface-variant leading-relaxed max-w-2xl">
-                        Engineering is my craft, but community is my passion. From co-organizing <span class="text-primary font-bold">WordCamp Kathmandu 2026</span>, <span class="text-primary font-bold">AI Conf 2026</span> and <span class="text-primary font-bold">BarCamp Kathmandu</span> to speaking on stages at <span class="text-primary font-bold">WordCamps</span>, I'm committed to growing the <span class="text-primary font-semibold">Nepali tech ecosystem</span> — one event, one talk, and one connection at a time.
+                    <p class="font-body text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                        Engineering is my craft, but community is my passion. From co-organizing <span class="text-emerald-700 dark:text-emerald-400 font-bold">WordCamp Kathmandu 2026</span>, <span class="text-emerald-700 dark:text-emerald-400 font-bold">AI Conf 2026</span> and <span class="text-emerald-700 dark:text-emerald-400 font-bold">BarCamp Kathmandu</span> to speaking on stages at <span class="text-emerald-700 dark:text-emerald-400 font-bold">WordCamps</span>, I'm committed to growing the <span class="text-emerald-700 dark:text-emerald-400 font-semibold">Nepali tech ecosystem</span> — one event, one talk, and one connection at a time.
                     </p>
                 </div>
                 <div class="lg:col-span-5 relative group">
                     <img 
                         alt="Sakar Upadhyaya Khatiwada Speaking at a Tech Event" 
-                        class="relative w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl" 
+                        class="relative w-full aspect-square object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 shadow-xl border border-slate-200/80 dark:border-slate-800" 
                         src="/images/speaker.jpg"
                         width="600"
                         height="600"
@@ -121,11 +149,14 @@ const communityContributions = [
         </section>
 
         <!-- Community Contributions Section -->
-        <section class="mb-32 gsap-reveal">
-            <h2 class="text-4xl md:text-5xl font-headline font-black text-slate-900 dark:text-white mb-12">Community Leadership</h2>
+        <section class="mb-24 sm:mb-32 gsap-reveal">
+            <div class="mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-slate-900 dark:text-white mb-4">Community Leadership</h2>
+                <div class="h-1.5 w-20 bg-emerald-600 rounded-full"></div>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {communityContributions.map((item) => (
-                    <div class="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col">
+                    <div class="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col">
                         <div class="w-14 h-14 bg-emerald-50 dark:bg-emerald-950/40 rounded-2xl flex items-center justify-center mb-6 text-emerald-700 dark:text-emerald-400">
                             <span class="material-symbols-outlined text-3xl" data-icon={item.icon}>{item.icon}</span>
                         </div>
@@ -134,7 +165,7 @@ const communityContributions = [
                             {item.description}
                         </p>
                         {item.link && (
-                            <a href={item.link.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm uppercase tracking-widest hover:text-emerald-800 transition-colors group mt-auto">
+                            <a href={item.link.url} target="_blank" rel="nofollow noopener noreferrer" class="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm uppercase tracking-widest hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors group mt-auto">
                                 {item.link.label}
                                 <span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="open_in_new">open_in_new</span>
                             </a>
@@ -145,25 +176,25 @@ const communityContributions = [
         </section>
 
         <!-- Talks List Section -->
-        <section class="mb-32">
+        <section class="mb-24 sm:mb-32">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 gsap-reveal">
                 <div>
                     <span class="font-label text-xs uppercase tracking-widest text-emerald-700 dark:text-emerald-400 font-bold mb-3 block">Public Speaking</span>
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-slate-900 dark:text-white">Technical Talks</h2>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-slate-900 dark:text-white">Technical Talks</h2>
                 </div>
-                <p class="text-slate-600 dark:text-slate-300 max-w-md text-lg">
+                <p class="text-slate-600 dark:text-slate-300 max-w-md text-base sm:text-lg">
                     Sharing knowledge across stages — making tech more accessible, one room at a time.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
                 {talks.map((talk: any) => (
-                    <article class="group gsap-reveal bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col h-full">
+                    <article class="group gsap-reveal bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col h-full">
                         <!-- Image/Thumbnail area -->
-                        <div class="aspect-video bg-emerald-50 dark:bg-slate-800 rounded-2xl mb-8 overflow-hidden relative block">
-                            <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10" aria-label={`View talk: ${talk.title}`}></a>
+                        <div class="aspect-video bg-emerald-50 dark:bg-slate-800 rounded-2xl mb-6 sm:mb-8 overflow-hidden relative block border border-slate-200/50 dark:border-slate-700/50">
+                            <a href={talk.video_url || talk.slides_url} target="_blank" rel="nofollow noopener noreferrer" class="absolute inset-0 z-10" aria-label={`View talk: ${talk.title}`}></a>
                             <img 
-                                src={talk.thumbnail || "https://lh3.googleusercontent.com/aida-public/AB6AXuCr9HE521CGJX6vYPXdqO_8TbRlNO_T6N_G8Rb3AyGZZ1NgCsVo3iRAMdibCICthOQ3oP0VsjLAKw2UZ99fZFNo04mcC-IZW-zKaxo2ovefhFLxvOcJrTxW-Cl6GCWOxnB3Bbt8ntZCW9pEBEhl-Z6f8lLcm31W-VaZfAOW_NpaQwIVAIzjVVteqmfr-tTAoixHwAWdyd0nIN1RV9aJJi-7Wjftt5VZlnNS2h01UhLPmch1c-C-17f8CJLq8GPkmqmliIcDAkDiJ5HM"} 
+                                src={talk.thumbnail || "/images/speaker.jpg"} 
                                 alt={talk.title} 
                                 width="640"
                                 height="360"
@@ -179,21 +210,21 @@ const communityContributions = [
                                 <span class="font-label text-xs font-bold text-emerald-700 dark:text-emerald-400 block uppercase tracking-widest">{talk.type || "Talk"}</span>
                                 <span class="h-px w-4 bg-slate-200 dark:bg-slate-700"></span>
                             </div>
-                            <h3 class="font-headline text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                                <a href={talk.video_url || talk.slides_url} target="_blank" rel="noopener noreferrer" class="relative z-10">{talk.title}</a>
+                            <h3 class="font-headline text-xl sm:text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                                <a href={talk.video_url || talk.slides_url} target="_blank" rel="nofollow noopener noreferrer" class="relative z-10">{talk.title}</a>
                             </h3>
-                            <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6 flex-1">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6 flex-1">
                                 {talk.description}
                             </p>
                             <div class="flex flex-wrap gap-5 relative z-10 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
                                 {talk.video_url && (
-                                    <a href={talk.video_url} target="_blank" rel="noopener noreferrer" class="group/link inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors">
+                                    <a href={talk.video_url} target="_blank" rel="nofollow noopener noreferrer" class="group/link inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors">
                                         <span class="material-symbols-outlined text-lg transition-transform group-hover/link:scale-110" data-icon="play_circle">play_circle</span>
                                         <span class="group-hover/link:underline underline-offset-4 decoration-2">Watch Video</span>
                                     </a>
                                 )}
                                 {talk.slides_url && (
-                                    <a href={talk.slides_url} target="_blank" rel="noopener noreferrer" class="group/link inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-label font-bold text-sm hover:text-slate-900 dark:hover:text-white transition-colors">
+                                    <a href={talk.slides_url} target="_blank" rel="nofollow noopener noreferrer" class="group/link inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-label font-bold text-sm hover:text-slate-900 dark:hover:text-white transition-colors">
                                         <span class="material-symbols-outlined text-lg transition-transform group-hover/link:scale-110" data-icon="auto_stories">auto_stories</span>
                                         <span class="group-hover/link:underline underline-offset-4 decoration-2">Slides</span>
                                     </a>
@@ -206,20 +237,20 @@ const communityContributions = [
         </section>
 
         <!-- CTA Section -->
-        <section class="mt-32 gsap-reveal">
-            <div class="bg-gradient-to-br from-emerald-800 to-teal-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-emerald-900/20">
+        <section class="mt-24 sm:mt-32 gsap-reveal">
+            <div class="bg-gradient-to-br from-emerald-800 to-teal-900 rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-emerald-900/20">
                 <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-black/20 rounded-full blur-3xl"></div>
                 
                 <div class="relative z-10">
                     <span class="font-label text-xs uppercase tracking-widest text-emerald-200 font-bold mb-6 block">Open to Collaboration</span>
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-white mb-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-white mb-6">
                         Speaker. Organizer. Collaborator.
                     </h2>
-                    <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-10 font-body leading-relaxed">
+                    <p class="text-base sm:text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto mb-10 font-body leading-relaxed">
                         Whether you need a speaker for your next event, a co-organizer for a community initiative, or just someone to bounce ideas off — I'm always happy to connect and build something together.
                     </p>
-                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-3 bg-white text-emerald-800 px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-transform shadow-xl">
+                    <a href="mailto:sakar@saaspal.us" class="inline-flex items-center gap-3 bg-white text-emerald-800 px-8 py-4 rounded-full font-headline font-bold text-base sm:text-lg hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-transform shadow-xl">
                         Let's Connect
                         <span class="material-symbols-outlined font-bold" data-icon="mail">mail</span>
                     </a>
@@ -228,4 +259,3 @@ const communityContributions = [
         </section>
     </main>
 </BaseLayout>
-

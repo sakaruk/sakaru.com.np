@@ -1,10 +1,10 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the leading slash
+const normalizedPath = pathname.replace(/\/+$/, '');
 
 const isActive = (path: string) => {
-    if (path === '' && currentPath === '') return true;
-    if (path !== '' && currentPath.startsWith(path)) return true;
+    if (path === '' && (normalizedPath === '' || normalizedPath === '/')) return true;
+    if (path !== '' && (normalizedPath === `/${path}` || normalizedPath.startsWith(`/${path}/`))) return true;
     return false;
 };
 ---

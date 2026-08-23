@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /*?*ref=
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
 
 Sitemap: https://sakaru.com.np/sitemap-index.xml

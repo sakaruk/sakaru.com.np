@@ -29,6 +29,17 @@ const { title, description, image } = Astro.props;
 
     <script is:inline>
       (function() {
+        const path = window.location.pathname;
+        if (path !== '/' && (path.endsWith('/') || path.endsWith('.html'))) {
+          const cleanPath = path.replace(/\.html$/, '').replace(/\/+$/, '') + window.location.search + window.location.hash;
+          const cleanUrl = window.location.origin + cleanPath;
+          window.location.replace(cleanUrl);
+        }
+      })();
+    </script>
+
+    <script is:inline>
+      (function() {
         try {
           const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
           
