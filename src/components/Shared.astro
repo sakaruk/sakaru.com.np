@@ -17,6 +17,11 @@ export interface Props {
 }
 
 const { items = [], basePath } = Astro.props;
+
+const cleanUrl = (url?: string) => {
+  if (!url || url === '/') return url;
+  return url.replace(/\/+$/, '');
+};
 ---
 
 <div class="space-y-1">
@@ -31,13 +36,13 @@ const { items = [], basePath } = Astro.props;
             <span class="text-[10px] font-label font-bold text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded">{item.frontmatter?.tag}</span>
           </div>
           <h2 class="text-3xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors mb-4">
-            <a href={item.url}>{item.frontmatter?.title}</a>
+            <a href={cleanUrl(item.url)}>{item.frontmatter?.title}</a>
           </h2>
           <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
             {item.frontmatter?.description || "A deep dive into custom app frameworks..."}
           </p>
           <div class="mt-6 flex items-center gap-2 text-primary font-label font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 transition-transform">
-            <a href={item.url}>READ {basePath === 'talks' ? 'TALK' : 'ARTICLE'}</a>
+            <a href={cleanUrl(item.url)}>READ {basePath === 'talks' ? 'TALK' : 'ARTICLE'}</a>
             <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
           </div>
         </div>

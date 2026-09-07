@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sakaru.com.np',
-  trailingSlash: 'ignore',
+  trailingSlash: 'never',
   build: {
     format: 'file',
   },
