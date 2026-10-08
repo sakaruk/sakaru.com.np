@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const talks = [
     {
+        title: "WordCamp Kathmandu 2026 Program Team Interview",
+        description: "Inside WordCamp Kathmandu 2026's Program",
+        type: "Interview",
+        thumbnail: "https://sitesaga.com/wp-content/uploads/2026/09/inside-wcktm-2026-program.png.webp",
+        more_url: "https://sitesaga.com/inside-wordcamp-kathmandu-2026s-program/"
+    },
+    {
         title: "Podcast on AI",
         description: "My takes on AI in development and some other talks",
         type: "Podcast",
@@ -107,7 +114,7 @@ const structuredData = {
           "name": "Sakar Upadhyaya Khatiwada",
           "url": "https://sakaru.com.np"
         },
-        "url": talk.video_url || talk.slides_url || "https://sakaru.com.np/community"
+        "url": talk.video_url || talk.slides_url || talk.more_url || "https://sakaru.com.np/community"
       }
     }))
   }
@@ -192,7 +199,7 @@ const structuredData = {
                     <article class="group gsap-reveal bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/40 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col h-full">
                         <!-- Image/Thumbnail area -->
                         <div class="aspect-video bg-emerald-50 dark:bg-slate-800 rounded-2xl mb-6 sm:mb-8 overflow-hidden relative block border border-slate-200/50 dark:border-slate-700/50">
-                            <a href={talk.video_url || talk.slides_url} target="_blank" rel="nofollow noopener noreferrer" class="absolute inset-0 z-10" aria-label={`View talk: ${talk.title}`}></a>
+                            <a href={talk.video_url || talk.slides_url || talk.more_url} target="_blank" rel="nofollow noopener noreferrer" class="absolute inset-0 z-10" aria-label={`View talk: ${talk.title}`}></a>
                             <img 
                                 src={talk.thumbnail || "/images/speaker.jpg"} 
                                 alt={talk.title} 
@@ -211,7 +218,7 @@ const structuredData = {
                                 <span class="h-px w-4 bg-slate-200 dark:bg-slate-700"></span>
                             </div>
                             <h3 class="font-headline text-xl sm:text-2xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                                <a href={talk.video_url || talk.slides_url} target="_blank" rel="nofollow noopener noreferrer" class="relative z-10">{talk.title}</a>
+                                <a href={talk.video_url || talk.slides_url || talk.more_url} target="_blank" rel="nofollow noopener noreferrer" class="relative z-10">{talk.title}</a>
                             </h3>
                             <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6 flex-1">
                                 {talk.description}
@@ -227,6 +234,12 @@ const structuredData = {
                                     <a href={talk.slides_url} target="_blank" rel="nofollow noopener noreferrer" class="group/link inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-label font-bold text-sm hover:text-slate-900 dark:hover:text-white transition-colors">
                                         <span class="material-symbols-outlined text-lg transition-transform group-hover/link:scale-110" data-icon="auto_stories">auto_stories</span>
                                         <span class="group-hover/link:underline underline-offset-4 decoration-2">Slides</span>
+                                    </a>
+                                )}
+                                {talk.more_url && (
+                                    <a href={talk.more_url} target="_blank" rel="nofollow noopener noreferrer" class="group/link inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-label font-bold text-sm hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors">
+                                        <span class="material-symbols-outlined text-lg transition-transform group-hover/link:scale-110" data-icon="article">article</span>
+                                        <span class="group-hover/link:underline underline-offset-4 decoration-2">Read more</span>
                                     </a>
                                 )}
                             </div>
